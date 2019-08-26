@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TaM-dA-rQR">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Actuators List View Controller-->
+        <scene sceneID="BQs-V3-XTd">
+            <objects>
+                <viewController id="lKJ-E4-dyr" customClass="ActuatorsListViewController" customModule="HermesApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MYY-V8-H4w">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hWd-pm-8jG">
+                                <rect key="frame" x="20" y="201" width="374" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ui3-aA-fAv">
+                                    <size key="itemSize" width="90" height="107"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="Jdv-DG-uOV" customClass="ActuatorCollectionViewCell" customModule="HermesApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="107"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="107"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="sZa-J4-RQN">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="92"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <inset key="titleEdgeInsets" minX="0.0" minY="99" maxX="0.0" maxY="0.0"/>
+                                                    <state key="normal" title="SALA" backgroundImage="romantico">
+                                                        <color key="titleColor" red="0.1040479019" green="0.4229857326" blue="0.83858335019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="actionDone:" destination="Jdv-DG-uOV" eventType="touchUpInside" id="zQa-fj-Xny"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="sZa-J4-RQN" secondAttribute="trailing" id="3IY-wT-Mn5"/>
+                                            <constraint firstItem="sZa-J4-RQN" firstAttribute="top" secondItem="Jdv-DG-uOV" secondAttribute="top" id="a2d-Lh-77p"/>
+                                            <constraint firstAttribute="bottom" secondItem="sZa-J4-RQN" secondAttribute="bottom" constant="15" id="ojq-pX-AEu"/>
+                                            <constraint firstItem="sZa-J4-RQN" firstAttribute="leading" secondItem="Jdv-DG-uOV" secondAttribute="leading" id="ycz-2t-SWM"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="myButton" destination="sZa-J4-RQN" id="t0L-Wv-nfv"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="0rD-aJ-nQB" customClass="ActuatorCollectionViewCell" customModule="HermesApp" customModuleProvider="target">
+                                        <rect key="frame" x="94.5" y="0.0" width="90" height="107"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="107"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="VYw-BR-zWU">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="92"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <inset key="titleEdgeInsets" minX="0.0" minY="99" maxX="0.0" maxY="0.0"/>
+                                                    <state key="normal" title="SALA" backgroundImage="space">
+                                                        <color key="titleColor" red="0.1040479019" green="0.4229857326" blue="0.83858335019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="actionDone:" destination="0rD-aJ-nQB" eventType="touchUpInside" id="iqR-9f-5aM"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="VYw-BR-zWU" firstAttribute="top" secondItem="0rD-aJ-nQB" secondAttribute="top" id="66a-3a-7SX"/>
+                                            <constraint firstAttribute="trailing" secondItem="VYw-BR-zWU" secondAttribute="trailing" id="8p5-XZ-9sy"/>
+                                            <constraint firstAttribute="bottom" secondItem="VYw-BR-zWU" secondAttribute="bottom" constant="15" id="bXW-2s-E9a"/>
+                                            <constraint firstItem="VYw-BR-zWU" firstAttribute="leading" secondItem="0rD-aJ-nQB" secondAttribute="leading" id="l0k-Pn-EXr"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="myButton" destination="VYw-BR-zWU" id="Vmm-p8-04a"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="xsu-cS-Gxb" customClass="ActuatorCollectionViewCell" customModule="HermesApp" customModuleProvider="target">
+                                        <rect key="frame" x="189.5" y="0.0" width="90" height="107"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="107"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Fee-h0-uxg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="92"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <inset key="titleEdgeInsets" minX="0.0" minY="99" maxX="0.0" maxY="0.0"/>
+                                                    <state key="normal" title="SALA" backgroundImage="space">
+                                                        <color key="titleColor" red="0.1040479019" green="0.4229857326" blue="0.83858335019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="actionDone:" destination="xsu-cS-Gxb" eventType="touchUpInside" id="9MZ-hh-R0c"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Fee-h0-uxg" secondAttribute="trailing" id="3sE-Pw-Fli"/>
+                                            <constraint firstItem="Fee-h0-uxg" firstAttribute="leading" secondItem="xsu-cS-Gxb" secondAttribute="leading" id="9Ax-72-5Yh"/>
+                                            <constraint firstItem="Fee-h0-uxg" firstAttribute="top" secondItem="xsu-cS-Gxb" secondAttribute="top" id="Lnt-lS-ey7"/>
+                                            <constraint firstAttribute="bottom" secondItem="Fee-h0-uxg" secondAttribute="bottom" constant="15" id="d6p-MT-Kgw"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="myButton" destination="Fee-h0-uxg" id="gnp-XT-1hw"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="NJG-fH-af9" customClass="ActuatorCollectionViewCell" customModule="HermesApp" customModuleProvider="target">
+                                        <rect key="frame" x="284" y="0.0" width="90" height="107"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="107"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="sbS-s7-UVP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="92"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <inset key="titleEdgeInsets" minX="0.0" minY="99" maxX="0.0" maxY="0.0"/>
+                                                    <state key="normal" title="SALA" backgroundImage="space">
+                                                        <color key="titleColor" red="0.1040479019" green="0.4229857326" blue="0.83858335019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="actionDone:" destination="NJG-fH-af9" eventType="touchUpInside" id="dGn-Ah-L3Z"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="sbS-s7-UVP" firstAttribute="leading" secondItem="NJG-fH-af9" secondAttribute="leading" id="c2p-nJ-W9j"/>
+                                            <constraint firstItem="sbS-s7-UVP" firstAttribute="top" secondItem="NJG-fH-af9" secondAttribute="top" id="jbH-JA-3hL"/>
+                                            <constraint firstAttribute="bottom" secondItem="sbS-s7-UVP" secondAttribute="bottom" constant="15" id="ng4-YY-5z6"/>
+                                            <constraint firstAttribute="trailing" secondItem="sbS-s7-UVP" secondAttribute="trailing" id="weB-EO-Khb"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="myButton" destination="sbS-s7-UVP" id="9jN-Tk-wjm"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="lKJ-E4-dyr" id="57q-Xi-ncG"/>
+                                    <outlet property="delegate" destination="lKJ-E4-dyr" id="tcl-kZ-TLT"/>
+                                </connections>
+                            </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CUz-mn-Ifu">
+                                <rect key="frame" x="20" y="443" width="374" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="gCj-hE-HNX">
+                                    <size key="itemSize" width="90" height="107"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="QNr-vX-WlD" customClass="ActuatorCollectionViewCell" customModule="HermesApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="107"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="107"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="LXV-vi-xlJ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="92"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <inset key="titleEdgeInsets" minX="0.0" minY="99" maxX="0.0" maxY="0.0"/>
+                                                    <state key="normal" title="BOMBILLO" backgroundImage="despertdor">
+                                                        <color key="titleColor" red="0.1040479019" green="0.4229857326" blue="0.83858335019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="actionDone:" destination="QNr-vX-WlD" eventType="touchUpInside" id="WFt-7D-llT"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="LXV-vi-xlJ" firstAttribute="top" secondItem="QNr-vX-WlD" secondAttribute="top" id="63h-yA-kw4"/>
+                                            <constraint firstItem="LXV-vi-xlJ" firstAttribute="leading" secondItem="QNr-vX-WlD" secondAttribute="leading" id="bGU-a1-fuO"/>
+                                            <constraint firstAttribute="trailing" secondItem="LXV-vi-xlJ" secondAttribute="trailing" id="eSF-3M-EcE"/>
+                                            <constraint firstAttribute="bottom" secondItem="LXV-vi-xlJ" secondAttribute="bottom" constant="15" id="kBU-JW-b5T"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="myButton" destination="LXV-vi-xlJ" id="fL2-ps-Mlh"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="9BO-fS-84T" customClass="ActuatorCollectionViewCell" customModule="HermesApp" customModuleProvider="target">
+                                        <rect key="frame" x="94.5" y="0.0" width="90" height="107"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="107"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="vTd-po-I29">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="92"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <inset key="titleEdgeInsets" minX="0.0" minY="99" maxX="0.0" maxY="0.0"/>
+                                                    <state key="normal" title="BOMBILLO" backgroundImage="bombillo">
+                                                        <color key="titleColor" red="0.1040479019" green="0.4229857326" blue="0.83858335019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="actionDone:" destination="9BO-fS-84T" eventType="touchUpInside" id="4iH-Sf-GcS"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="vTd-po-I29" firstAttribute="top" secondItem="9BO-fS-84T" secondAttribute="top" id="Mvm-dy-m43"/>
+                                            <constraint firstAttribute="bottom" secondItem="vTd-po-I29" secondAttribute="bottom" constant="15" id="W6o-hh-RAD"/>
+                                            <constraint firstItem="vTd-po-I29" firstAttribute="leading" secondItem="9BO-fS-84T" secondAttribute="leading" id="kLa-SC-UxE"/>
+                                            <constraint firstAttribute="trailing" secondItem="vTd-po-I29" secondAttribute="trailing" id="z6p-6N-quk"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="myButton" destination="vTd-po-I29" id="2fy-yo-bxI"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="GvX-a7-Fsy" customClass="ActuatorCollectionViewCell" customModule="HermesApp" customModuleProvider="target">
+                                        <rect key="frame" x="189.5" y="0.0" width="90" height="107"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="107"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ukw-Bz-Udf">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="92"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <inset key="titleEdgeInsets" minX="0.0" minY="99" maxX="0.0" maxY="0.0"/>
+                                                    <state key="normal" title="BOMBILLO" backgroundImage="bombillo">
+                                                        <color key="titleColor" red="0.1040479019" green="0.4229857326" blue="0.83858335019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="actionDone:" destination="GvX-a7-Fsy" eventType="touchUpInside" id="wvf-KO-A1b"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="ukw-Bz-Udf" secondAttribute="bottom" constant="15" id="1Rr-pl-ya9"/>
+                                            <constraint firstItem="ukw-Bz-Udf" firstAttribute="top" secondItem="GvX-a7-Fsy" secondAttribute="top" id="6WE-Tk-RBu"/>
+                                            <constraint firstAttribute="trailing" secondItem="ukw-Bz-Udf" secondAttribute="trailing" id="F4D-5H-dSi"/>
+                                            <constraint firstItem="ukw-Bz-Udf" firstAttribute="leading" secondItem="GvX-a7-Fsy" secondAttribute="leading" id="jla-Qi-6uo"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="myButton" destination="ukw-Bz-Udf" id="4B3-vn-mD1"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="3ZW-kU-iVj" customClass="ActuatorCollectionViewCell" customModule="HermesApp" customModuleProvider="target">
+                                        <rect key="frame" x="284" y="0.0" width="90" height="107"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="107"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ESj-HS-53s">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="92"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <inset key="titleEdgeInsets" minX="0.0" minY="99" maxX="0.0" maxY="0.0"/>
+                                                    <state key="normal" title="BOMBILLO" backgroundImage="bombillo">
+                                                        <color key="titleColor" red="0.1040479019" green="0.4229857326" blue="0.83858335019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="actionDone:" destination="3ZW-kU-iVj" eventType="touchUpInside" id="Lbl-m2-UZb"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="ESj-HS-53s" firstAttribute="leading" secondItem="3ZW-kU-iVj" secondAttribute="leading" id="46A-mC-il9"/>
+                                            <constraint firstAttribute="bottom" secondItem="ESj-HS-53s" secondAttribute="bottom" constant="15" id="RGz-Wg-80Q"/>
+                                            <constraint firstItem="ESj-HS-53s" firstAttribute="top" secondItem="3ZW-kU-iVj" secondAttribute="top" id="pnc-c7-ySQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="ESj-HS-53s" secondAttribute="trailing" id="ux4-UQ-Q8R"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="myButton" destination="ESj-HS-53s" id="yfT-AV-jkx"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="lKJ-E4-dyr" id="xyn-MT-r1Z"/>
+                                    <outlet property="delegate" destination="lKJ-E4-dyr" id="dcW-fH-vVW"/>
+                                </connections>
+                            </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fgg-Qc-FR4">
+                                <rect key="frame" x="20" y="701" width="374" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Zon-Cf-ddg">
+                                    <size key="itemSize" width="90" height="107"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="Z0t-cv-SkP" customClass="ActuatorCollectionViewCell" customModule="HermesApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="107"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="107"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xs3-ks-1HA">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="92"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <inset key="titleEdgeInsets" minX="0.0" minY="99" maxX="0.0" maxY="0.0"/>
+                                                    <state key="normal">
+                                                        <color key="titleColor" red="0.1040479019" green="0.4229857326" blue="0.83858335019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="xs3-ks-1HA" firstAttribute="top" secondItem="Z0t-cv-SkP" secondAttribute="top" id="5A6-FU-dUq"/>
+                                            <constraint firstItem="xs3-ks-1HA" firstAttribute="leading" secondItem="Z0t-cv-SkP" secondAttribute="leading" id="CAH-qd-Bqo"/>
+                                            <constraint firstAttribute="bottom" secondItem="xs3-ks-1HA" secondAttribute="bottom" constant="15" id="MHw-Nn-v90"/>
+                                            <constraint firstAttribute="trailing" secondItem="xs3-ks-1HA" secondAttribute="trailing" id="o6Q-Gi-hqD"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mis Espacios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Lh-32-ZF0">
+                                <rect key="frame" x="20" y="141" width="142" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mis Dispositivos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l10-VI-qVY">
+                                <rect key="frame" x="20" y="384" width="175" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mis Favoritos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JtR-9V-gDR">
+                                <rect key="frame" x="20" y="633" width="142" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="zwd-TL-Ww9"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="p0O-9G-avz"/>
+                    <connections>
+                        <outlet property="collectionViewA" destination="hWd-pm-8jG" id="PHV-3z-28p"/>
+                        <outlet property="collectionViewB" destination="CUz-mn-Ifu" id="OU0-uh-us0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xCj-ud-5G1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="58" y="38"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="actuatorVC" id="BYZ-38-t0r" customClass="ViewController" customModule="HermesApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8o0-BQ-hpR">
+                                <rect key="frame" x="246" y="604" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Timer"/>
+                                <connections>
+                                    <action selector="setTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HhA-b4-eUg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQk-P1-PS2">
+                                <rect key="frame" x="230" y="642" width="73" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Persuation"/>
+                                <connections>
+                                    <action selector="setPersuationMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pLg-MI-Nu1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uob-MJ-GDG">
+                                <rect key="frame" x="79" y="604" width="47" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Details"/>
+                                <connections>
+                                    <segue destination="GEZ-Cb-e3b" kind="show" id="gIy-e2-cFR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5b-k1-UmT">
+                                <rect key="frame" x="70" y="642" width="65" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Romantic"/>
+                                <connections>
+                                    <action selector="setRomacticMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ufh-vT-9ea"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="iNl-bR-eTw">
+                                <rect key="frame" x="48" y="469" width="318" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZK-GR-lAB">
+                                <rect key="frame" x="186" y="427" width="29" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uze-61-Ygh">
+                                <rect key="frame" x="50" y="128" width="314" height="280"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="bombillo">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onOffSwitch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KAV-ct-5b6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="Mode" destination="uob-MJ-GDG" id="Lu5-hJ-rOW"/>
+                        <outlet property="OnOff" destination="uze-61-Ygh" id="n1H-9d-orO"/>
+                        <outlet property="Temporizator" destination="8o0-BQ-hpR" id="I6P-6H-KQq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="876.81159420289862" y="44.866071428571423"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ixh-r4-8G4">
+            <objects>
+                <viewController id="GEZ-Cb-e3b" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hpn-8C-hwI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3r-dS-It0">
+                                <rect key="frame" x="171" y="114" width="62" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Estado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfm-IZ-LQv">
+                                <rect key="frame" x="50" y="178" width="53" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Modo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQl-lJ-8z1">
+                                <rect key="frame" x="50" y="207" width="44" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nivel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bC-pY-wpG">
+                                <rect key="frame" x="50" y="236" width="38" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oe4-VM-BOn">
+                                <rect key="frame" x="50" y="265" width="28" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Max" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhE-Zn-XaC">
+                                <rect key="frame" x="50" y="294" width="32" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="9TG-vG-agz"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ezp-14-rIw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1768.1159420289857" y="44.866071428571423"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6Gj-Rb-HcX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TaM-dA-rQR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Q2F-gA-1Sg">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lKJ-E4-dyr" kind="relationship" relationship="rootViewController" id="OKU-Zx-gHY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yNc-59-HiQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-904" y="38"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bombillo" width="612" height="612"/>
+        <image name="despertdor" width="256" height="256"/>
+        <image name="romantico" width="900" height="520"/>
+        <image name="space" width="225" height="225"/>
+    </resources>
+</document>
