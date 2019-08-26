@@ -14,6 +14,8 @@ class ViewController: UIViewController {
   @IBOutlet weak var Mode: UIButton!
   @IBOutlet weak var Temporizator: UIButton!
   @IBOutlet weak var OnOff: UIButton!
+  @IBOutlet weak var slider: UISlider!
+  @IBOutlet weak var sliderValue: UILabel!
   
   //properties
   var actuator:Actuator?
@@ -47,6 +49,10 @@ class ViewController: UIViewController {
     alertWithTF()
     
     
+  }
+  
+  @IBAction func didChangeSlider(_ sender: Any) {
+    sliderValue.text = 	"\(round(slider.value))"
   }
   
   
