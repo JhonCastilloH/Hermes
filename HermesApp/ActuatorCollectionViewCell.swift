@@ -33,19 +33,3 @@ class ActuatorCollectionViewCell: UICollectionViewCell {
     
     
 }
-
-extension UIImage {
-    
-    enum AssetIdentifier: String {
-        case Bombillo = "bombillo"
-        case Ventilador = "despertdor"
-        case Sirena = "romantico"
-        
-        static let values = [Bombillo, Ventilador, Sirena]
-    }
-    
-    convenience init!(assetIdentifier: AssetIdentifier) {
-        self.init(named: assetIdentifier.rawValue)
-    }
-    
-}

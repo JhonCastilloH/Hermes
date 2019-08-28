@@ -16,15 +16,15 @@ class ActuatorsListViewController: UIViewController {
     // MARK: - Instance Properties
     var actuator:Actuator?
     var indexSelected = -1
-    public var actuatorList = ActuatorList.getActuators()
+    public var actuatorList = ActuatorList.getActuators(by: "Mi Sala")
     var space:Space?
     public var spaceList = SpaceList.getSpaces()
-    var spaceSelected: Int?
+    var spaceSelected: Int? = 0
     var actuatorSelected: Int?
     
-    let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
-   
-    
+    let reuseIdentifierB = "actuatorCell" // also enter this string as the cell identifier in the storyboard
+   let reuseIdentifierA = "spaceCell" // also enter this string as the cell identifier in the storyboard
+  
     
 }
 
@@ -32,30 +32,48 @@ extension ActuatorsListViewController : UICollectionViewDataSource {
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
          if collectionView == self.collectionViewA {
-            return self.actuatorList.actuators.count
-         }else {
             return self.spaceList.spaces.count
+         }else {
+          return self.actuatorList.actuators.count
         }
     }
     
     // make a cell for each cell index path
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+       if collectionView == self.collectionViewA {
+          // get a reference to our storyboard cell
+          // Use the outlet in our custom class to get a reference to the UILabel in the cell
+          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierA, for: indexPath as IndexPath) as! SpaceCollectionViewCell
+          
+          cell.myButton.setTitle(self.spaceList.spaces[indexPath.item].name, for: .normal)
+          cell.indexCell = indexPath.row
+          cell.delegate = self
+          return cell
+        }else if (collectionView == self.collectionViewB) {
+          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierB, for: indexPath as IndexPath) as! ActuatorCollectionViewCell
+          
+          cell.actuator = self.actuatorList.actuators[indexPath.item]
+          cell.setupActuatorCell()
+          cell.indexCell = indexPath.row
+          cell.delegate = self
+          return cell
+       } else {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierB, for: indexPath as IndexPath) as! ActuatorCollectionViewCell
         
-        // get a reference to our storyboard cell
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! ActuatorCollectionViewCell
-        
-        // Use the outlet in our custom class to get a reference to the UILabel in the cell
-        
-        if collectionView == self.collectionViewA {
-            cell.myButton.setTitle(self.spaceList.spaces[indexPath.item].name, for: .normal)
-        }else {
-            cell.actuator = self.actuatorList.actuators[indexPath.item]
-            cell.setupActuatorCell()
-        }
-        cell.indexCell = indexPath.row
-        cell.delegate = self
         return cell
+      }
+      
     }
+  
+   @IBAction func gotoSpaceView(_ sender: UIButton) {
+    if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "spaceVC") as? SpaceViewController {
+      viewController.space = self.spaceList.spaces[spaceSelected!]
+      if let navigator = self.navigationController {
+        navigator.pushViewController(viewController, animated: true)
+      }
+    }
+  }
+  
 }
 
 extension ActuatorsListViewController : UICollectionViewDelegate {
@@ -72,7 +90,7 @@ extension ActuatorsListViewController : cellButtonDelegate{
         
         
         if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "actuatorVC") as? ViewController {
-            viewController.actuator = self.actuatorList.actuators[index]
+          viewController.actuator = self.actuatorList.actuators[index]
             if let navigator = self.navigationController {
                 navigator.pushViewController(viewController, animated: true)
             }
@@ -80,4 +98,14 @@ extension ActuatorsListViewController : cellButtonDelegate{
     }
     
     
+}
+
+extension ActuatorsListViewController : cellSpaceButtonDelegate{
+  func didSelectSpaceButton(_ index: Int) {
+    print("You selected the space button cell!")
+    self.spaceSelected = index
+    self.actuatorList = ActuatorList.getActuators(by: self.spaceList.spaces[index].name)
+    self.collectionViewB.reloadData()
+  }
+  
 }

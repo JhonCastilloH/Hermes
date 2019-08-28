@@ -8,14 +8,41 @@
 
 extension ActuatorList {
     
-    public static func getActuators() -> ActuatorList {
-        let actuators = [
-            Actuator(name: "bombillo", switchBulb: true, level: 0.9, timeLeft: 0, mode: "onOff"),
-            Actuator(name: "despertdor", switchBulb: true, level: 0.5, timeLeft: 2, mode: "onOff"),
-            Actuator(name: "romantico", switchBulb: false, level: 1.0, timeLeft: 3, mode: "onOff"),
-            Actuator(name: "bombillo", switchBulb: false, level: 1.0, timeLeft: 4, mode: "onOff")
-        ]
-        return ActuatorList(actuators: actuators, title: "Mi Sala")
+  public static func getActuators(by spaceId: String) -> ActuatorList {
+  var actuators:Array<Actuator> = Array()
+    switch spaceId {
+     case "Mi Sala":
+      actuators = [
+        Actuator(name: "bombillo", switchBulb: true, level: 0.9, timeLeft: 0, mode: "onOff"),
+        Actuator(name: "romantico", switchBulb: false, level: 1.0, timeLeft: 3, mode: "onOff")
+      ]
+    case "Mi Bano":
+      actuators = [
+        Actuator(name: "bombillo", switchBulb: true, level: 0.9, timeLeft: 0, mode: "onOff"),
+        Actuator(name: "bombillo", switchBulb: false, level: 1.0, timeLeft: 4, mode: "onOff")
+      ]
+    case "Mi Cuarto":
+      actuators = [
+        Actuator(name: "romantico", switchBulb: false, level: 1.0, timeLeft: 3, mode: "onOff"),
+        Actuator(name: "romantico", switchBulb: false, level: 1.0, timeLeft: 3, mode: "onOff"),
+        Actuator(name: "bombillo", switchBulb: false, level: 1.0, timeLeft: 4, mode: "onOff")
+      ]
+    case "Mi Cocina":
+      actuators = [
+        Actuator(name: "bombillo", switchBulb: true, level: 0.9, timeLeft: 0, mode: "onOff"),
+        Actuator(name: "despertdor", switchBulb: true, level: 0.5, timeLeft: 2, mode: "onOff"),
+        Actuator(name: "romantico", switchBulb: false, level: 1.0, timeLeft: 3, mode: "onOff"),
+        Actuator(name: "bombillo", switchBulb: false, level: 1.0, timeLeft: 4, mode: "onOff")
+      ]
+    default:
+      actuators = [
+        Actuator(name: "bombillo", switchBulb: true, level: 0.9, timeLeft: 0, mode: "onOff"),
+        Actuator(name: "despertdor", switchBulb: true, level: 0.5, timeLeft: 2, mode: "onOff"),
+        Actuator(name: "romantico", switchBulb: false, level: 1.0, timeLeft: 3, mode: "onOff"),
+        Actuator(name: "bombillo", switchBulb: false, level: 1.0, timeLeft: 4, mode: "onOff")
+      ]
+    }
+        return ActuatorList(actuators: actuators, title: spaceId)
     }
 
 }
