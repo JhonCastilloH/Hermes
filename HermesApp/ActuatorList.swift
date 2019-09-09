@@ -8,6 +8,6 @@
 
 
 public struct ActuatorList {
-    public let actuators: [Actuator]
+    public var actuators: [Actuator]
     public let title: String
 }

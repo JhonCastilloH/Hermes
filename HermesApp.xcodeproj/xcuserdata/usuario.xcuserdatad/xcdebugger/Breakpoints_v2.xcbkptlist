@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HermesApp/ActuatorsListViewController.swift"
-            timestampString = "588543764.041449"
+            filePath = "HermesApp/ModelController.swift"
+            timestampString = "589691205.293973"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "collectionView(_:cellForItemAt:)"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "update(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,77 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HermesApp/ActuatorCollectionViewCell.swift"
-            timestampString = "588543764.042691"
+            filePath = "HermesApp/SpaceViewController.swift"
+            timestampString = "589691205.294239"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "setupActuatorCell()"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "editName(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HermesApp/ModelController.swift"
+            timestampString = "589691205.294351"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "update(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HermesApp.ModelController.update(HermesApp.Actuator) -&gt; ()"
+                  moduleName = "HermesApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/usuario/Desktop/HermesApp/HermesApp/ModelController.swift"
+                  timestampString = "589691205.561329"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "141">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (HermesApp.Space) -&gt; Swift.Bool in HermesApp.ModelController.update(HermesApp.Actuator) -&gt; ()"
+                  moduleName = "HermesApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/usuario/Desktop/HermesApp/HermesApp/ModelController.swift"
+                  timestampString = "589691205.565255"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HermesApp/ModelController.swift"
+            timestampString = "589691205.294443"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "update(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

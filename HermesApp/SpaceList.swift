@@ -7,6 +7,6 @@
 //
 
 public struct SpaceList {
-    public let spaces: [Space]
+    public var spaces: [Space]
     public let title: String
 }

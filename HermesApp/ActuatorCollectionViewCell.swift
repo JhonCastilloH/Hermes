@@ -19,7 +19,7 @@ class ActuatorCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Actions
     func setupActuatorCell() {
-        let image = UIImage(assetIdentifier: UIImage.AssetIdentifier(rawValue: actuator!.name)!)
+        let image = UIImage(assetIdentifier: UIImage.AssetIdentifier(rawValue: actuator!.type)!)
         myButton.setBackgroundImage(image, for: .normal)
         myButton.setTitle(actuator!.name, for: .normal)
         

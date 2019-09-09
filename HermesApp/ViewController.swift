@@ -16,22 +16,29 @@ class ViewController: UIViewController {
   @IBOutlet weak var OnOff: UIButton!
   @IBOutlet weak var slider: UISlider!
   @IBOutlet weak var sliderValue: UILabel!
+  @IBOutlet weak var editButton: UIButton!
+  @IBOutlet weak var actuatorNameFiled: UITextField!
+  @IBOutlet weak var actuatorNameLabel: UILabel!
+    
   
-  //properties
+  // MARK: - Properties
+  var modelController : ModelController!
   var actuator:Actuator?
   var timer:Timer?
   let image = UIImage(named: "bombillo")
-    var noirImage: UIImage?
+  var filteredImage: CIImage?
+  var noirImage: UIImage?
+    
   //Lifecicle
   override func viewDidLoad() {
     super.viewDidLoad()
     self.title = actuator?.name
-    
+    self.actuatorNameLabel.text = actuator?.name
     noirImage = image?.noir
     // Do any additional setup after loading the view.
   }
   
-  //Actions
+  // MARK: - actions
   
   @IBAction func onOffSwitch(_ sender: Any) {
     actuator!.mode = "onOff"
@@ -49,10 +56,6 @@ class ViewController: UIViewController {
     alertWithTF()
     
     
-  }
-  
-  @IBAction func didChangeSlider(_ sender: Any) {
-    sliderValue.text = 	"\(round(slider.value))"
   }
   
   
@@ -91,13 +94,39 @@ class ViewController: UIViewController {
     }else{
       timer?.invalidate()
     }
-    
-    
   }
   
   
+    @IBAction func save(_ sender: AnyObject) {
+        //let spacesList = SpaceList(spaces: [], title: "Changed Home")
+        self.actuator?.level = 3
+        modelController.delete(self.actuator!)
+        self.navigationController?.popViewController(animated: true)
+    }
     
+    @IBAction func editName(_ sender: Any) {
+        let button = sender as! UIButton
+        if (button.titleLabel?.text == "Guardar nombre") {
+            self.actuatorNameFiled.isHidden = true
+            self.actuatorNameLabel.isHidden = false
+            self.actuator?.name = self.actuatorNameFiled.text!
+            modelController.update(self.actuator!)
+            self.editButton.setTitle("Cambiar nombre", for: .normal)
+            self.actuatorNameLabel.text = self.actuator?.name
+        }else{
+            self.actuatorNameFiled.isHidden = false
+            self.actuatorNameLabel.isHidden = true
+            self.editButton.setTitle("Guardar nombre", for: .normal)
+        }
+    }
     
+   
+    
+    @IBAction func sliderValueDidEnd(_ sender: UISlider!) {
+        //originalImage = selectedPictureImageView.image
+        //sender.value = sliderValue
+        print("Unpressed button slider value is \(sender.value)")
+    }
     
     func alertWithTF() {
         //Step : 1
@@ -123,6 +152,19 @@ class ViewController: UIViewController {
         self.present(alert, animated:true, completion: nil)
     }
     
+    @IBAction func sliderValueDidChange(_ sender: UISlider!) {
+        let displayinPercentage = Int((sender.value/1000) * 10000)
+        sliderValue.text = String(displayinPercentage)
+        let beginImage = CIImage(image: self.image!)
+        let filter = CIFilter(name: "CIColorControls")
+        filter!.setValue(beginImage, forKey: kCIInputImageKey)
+        filter!.setValue(sender.value/10, forKey: kCIInputBrightnessKey)
+        if let ciimage = filter!.outputImage {
+            filteredImage = ciimage
+            OnOff.setImage(UIImage(ciImage: filteredImage!), for: .normal)
+        }
+        sliderValue.text =     "\(round(slider.value))"
+    }
   
 }
 

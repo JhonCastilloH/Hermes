@@ -72,7 +72,7 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <inset key="titleEdgeInsets" minX="0.0" minY="99" maxX="0.0" maxY="0.0"/>
-                                                    <state key="normal" title="SALA" backgroundImage="space">
+                                                    <state key="normal" title="NUEVO" backgroundImage="plus-1">
                                                         <color key="titleColor" red="0.1040479019" green="0.4229857326" blue="0.83858335019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
@@ -89,68 +89,6 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="myButton" destination="VYw-BR-zWU" id="Vmm-p8-04a"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="xsu-cS-Gxb" customClass="ActuatorCollectionViewCell" customModule="HermesApp" customModuleProvider="target">
-                                        <rect key="frame" x="189.5" y="0.0" width="90" height="107"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="90" height="107"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Fee-h0-uxg">
-                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="92"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <inset key="titleEdgeInsets" minX="0.0" minY="99" maxX="0.0" maxY="0.0"/>
-                                                    <state key="normal" title="SALA" backgroundImage="space">
-                                                        <color key="titleColor" red="0.1040479019" green="0.4229857326" blue="0.83858335019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="actionDone:" destination="xsu-cS-Gxb" eventType="touchUpInside" id="9MZ-hh-R0c"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="Fee-h0-uxg" secondAttribute="trailing" id="3sE-Pw-Fli"/>
-                                            <constraint firstItem="Fee-h0-uxg" firstAttribute="leading" secondItem="xsu-cS-Gxb" secondAttribute="leading" id="9Ax-72-5Yh"/>
-                                            <constraint firstItem="Fee-h0-uxg" firstAttribute="top" secondItem="xsu-cS-Gxb" secondAttribute="top" id="Lnt-lS-ey7"/>
-                                            <constraint firstAttribute="bottom" secondItem="Fee-h0-uxg" secondAttribute="bottom" constant="15" id="d6p-MT-Kgw"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="myButton" destination="Fee-h0-uxg" id="gnp-XT-1hw"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="NJG-fH-af9" customClass="ActuatorCollectionViewCell" customModule="HermesApp" customModuleProvider="target">
-                                        <rect key="frame" x="284" y="0.0" width="90" height="107"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="90" height="107"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="sbS-s7-UVP">
-                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="92"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <inset key="titleEdgeInsets" minX="0.0" minY="99" maxX="0.0" maxY="0.0"/>
-                                                    <state key="normal" title="SALA" backgroundImage="space">
-                                                        <color key="titleColor" red="0.1040479019" green="0.4229857326" blue="0.83858335019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="actionDone:" destination="NJG-fH-af9" eventType="touchUpInside" id="dGn-Ah-L3Z"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="sbS-s7-UVP" firstAttribute="leading" secondItem="NJG-fH-af9" secondAttribute="leading" id="c2p-nJ-W9j"/>
-                                            <constraint firstItem="sbS-s7-UVP" firstAttribute="top" secondItem="NJG-fH-af9" secondAttribute="top" id="jbH-JA-3hL"/>
-                                            <constraint firstAttribute="bottom" secondItem="sbS-s7-UVP" secondAttribute="bottom" constant="15" id="ng4-YY-5z6"/>
-                                            <constraint firstAttribute="trailing" secondItem="sbS-s7-UVP" secondAttribute="trailing" id="weB-EO-Khb"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="myButton" destination="sbS-s7-UVP" id="9jN-Tk-wjm"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -182,7 +120,7 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <inset key="titleEdgeInsets" minX="0.0" minY="99" maxX="0.0" maxY="0.0"/>
-                                                    <state key="normal" title="BOMBILLO" backgroundImage="despertdor">
+                                                    <state key="normal" title="BOMBILLO" backgroundImage="bombillo">
                                                         <color key="titleColor" red="0.1040479019" green="0.4229857326" blue="0.83858335019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
@@ -213,7 +151,7 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <inset key="titleEdgeInsets" minX="0.0" minY="99" maxX="0.0" maxY="0.0"/>
-                                                    <state key="normal" title="BOMBILLO" backgroundImage="bombillo">
+                                                    <state key="normal" title="NUEVO" backgroundImage="plus-1">
                                                         <color key="titleColor" red="0.1040479019" green="0.4229857326" blue="0.83858335019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
@@ -230,68 +168,6 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="myButton" destination="vTd-po-I29" id="2fy-yo-bxI"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="GvX-a7-Fsy" customClass="ActuatorCollectionViewCell" customModule="HermesApp" customModuleProvider="target">
-                                        <rect key="frame" x="189.5" y="0.0" width="90" height="107"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="90" height="107"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ukw-Bz-Udf">
-                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="92"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <inset key="titleEdgeInsets" minX="0.0" minY="99" maxX="0.0" maxY="0.0"/>
-                                                    <state key="normal" title="BOMBILLO" backgroundImage="bombillo">
-                                                        <color key="titleColor" red="0.1040479019" green="0.4229857326" blue="0.83858335019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="actionDone:" destination="GvX-a7-Fsy" eventType="touchUpInside" id="wvf-KO-A1b"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="ukw-Bz-Udf" secondAttribute="bottom" constant="15" id="1Rr-pl-ya9"/>
-                                            <constraint firstItem="ukw-Bz-Udf" firstAttribute="top" secondItem="GvX-a7-Fsy" secondAttribute="top" id="6WE-Tk-RBu"/>
-                                            <constraint firstAttribute="trailing" secondItem="ukw-Bz-Udf" secondAttribute="trailing" id="F4D-5H-dSi"/>
-                                            <constraint firstItem="ukw-Bz-Udf" firstAttribute="leading" secondItem="GvX-a7-Fsy" secondAttribute="leading" id="jla-Qi-6uo"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="myButton" destination="ukw-Bz-Udf" id="4B3-vn-mD1"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="3ZW-kU-iVj" customClass="ActuatorCollectionViewCell" customModule="HermesApp" customModuleProvider="target">
-                                        <rect key="frame" x="284" y="0.0" width="90" height="107"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="90" height="107"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ESj-HS-53s">
-                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="92"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <inset key="titleEdgeInsets" minX="0.0" minY="99" maxX="0.0" maxY="0.0"/>
-                                                    <state key="normal" title="BOMBILLO" backgroundImage="bombillo">
-                                                        <color key="titleColor" red="0.1040479019" green="0.4229857326" blue="0.83858335019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="actionDone:" destination="3ZW-kU-iVj" eventType="touchUpInside" id="Lbl-m2-UZb"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="ESj-HS-53s" firstAttribute="leading" secondItem="3ZW-kU-iVj" secondAttribute="leading" id="46A-mC-il9"/>
-                                            <constraint firstAttribute="bottom" secondItem="ESj-HS-53s" secondAttribute="bottom" constant="15" id="RGz-Wg-80Q"/>
-                                            <constraint firstItem="ESj-HS-53s" firstAttribute="top" secondItem="3ZW-kU-iVj" secondAttribute="top" id="pnc-c7-ySQ"/>
-                                            <constraint firstAttribute="trailing" secondItem="ESj-HS-53s" secondAttribute="trailing" id="ux4-UQ-Q8R"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="myButton" destination="ESj-HS-53s" id="yfT-AV-jkx"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -318,11 +194,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="90" height="107"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xs3-ks-1HA">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xs3-ks-1HA">
                                                     <rect key="frame" x="0.0" y="0.0" width="90" height="92"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <inset key="titleEdgeInsets" minX="0.0" minY="99" maxX="0.0" maxY="0.0"/>
-                                                    <state key="normal">
+                                                    <state key="normal" title="NUEVO" backgroundImage="plus-1">
                                                         <color key="titleColor" red="0.1040479019" green="0.4229857326" blue="0.83858335019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                 </button>
@@ -421,14 +297,15 @@
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="iNl-bR-eTw">
-                                <rect key="frame" x="48" y="469" width="318" height="30"/>
+                                <rect key="frame" x="48" y="526" width="249" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="didChangeSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="KqT-Lt-eqe"/>
+                                    <action selector="sliderValueDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="lRY-gt-7Mc"/>
+                                    <action selector="sliderValueDidEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="2Yh-QO-XF2"/>
                                 </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uze-61-Ygh">
-                                <rect key="frame" x="50" y="128" width="314" height="280"/>
+                                <rect key="frame" x="50" y="69" width="314" height="280"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="bombillo">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -438,12 +315,45 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZK-GR-lAB">
-                                <rect key="frame" x="180" y="387" width="55" height="21"/>
+                                <rect key="frame" x="309" y="526" width="55" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zi9-XC-xAQ">
+                                <rect key="frame" x="71" y="815" width="273" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="D E S C O N E C T A R"/>
+                                <connections>
+                                    <action selector="save:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bkU-v8-Lua"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPV-wU-IRL">
+                                <rect key="frame" x="40" y="386" width="349" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="new name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uqh-D2-V7F">
+                                <rect key="frame" x="40" y="386" width="354" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kBm-A2-kg5">
+                                <rect key="frame" x="150" y="441" width="114" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cambiar nombre"/>
+                                <connections>
+                                    <action selector="editName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LWQ-bl-qkX"/>
+                                    <action selector="editName:" destination="7Rl-9K-Jeg" eventType="touchUpInside" id="xYS-se-IV9"/>
+                                    <action selector="gotoSpaceView:" destination="lKJ-E4-dyr" eventType="touchUpInside" id="Efi-3h-UZm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -452,6 +362,9 @@
                         <outlet property="Mode" destination="uob-MJ-GDG" id="Lu5-hJ-rOW"/>
                         <outlet property="OnOff" destination="uze-61-Ygh" id="n1H-9d-orO"/>
                         <outlet property="Temporizator" destination="8o0-BQ-hpR" id="I6P-6H-KQq"/>
+                        <outlet property="actuatorNameFiled" destination="Uqh-D2-V7F" id="rXZ-iE-K22"/>
+                        <outlet property="actuatorNameLabel" destination="cPV-wU-IRL" id="dY0-Rl-MAK"/>
+                        <outlet property="editButton" destination="kBm-A2-kg5" id="wLa-MF-7BI"/>
                         <outlet property="slider" destination="iNl-bR-eTw" id="hfC-m5-wKL"/>
                         <outlet property="sliderValue" destination="xZK-GR-lAB" id="qfM-uF-L9f"/>
                     </connections>
@@ -545,13 +458,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RjZ-tf-FE3">
-                                <rect key="frame" x="20" y="427" width="361" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="11ºC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgw-gA-Kjd">
                                 <rect key="frame" x="41" y="566" width="150" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -612,13 +518,55 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A7T-EV-BT4">
+                                <rect key="frame" x="71" y="815" width="273" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="D E S C O N E C T A R"/>
+                                <connections>
+                                    <action selector="save:" destination="7Rl-9K-Jeg" eventType="touchUpInside" id="obm-hf-ffD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ath-s2-6gp">
+                                <rect key="frame" x="345" y="95" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="zRV-p4-S5C" kind="presentation" id="Ozz-Nx-IIT"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RjZ-tf-FE3">
+                                <rect key="frame" x="30" y="424" width="349" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="new name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JWk-Db-NaT">
+                                <rect key="frame" x="30" y="424" width="354" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="doQ-gO-75e">
+                                <rect key="frame" x="151" y="504" width="114" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cambiar nombre"/>
+                                <connections>
+                                    <action selector="editName:" destination="7Rl-9K-Jeg" eventType="touchUpInside" id="Vxd-Iv-PKm"/>
+                                    <action selector="gotoSpaceView:" destination="lKJ-E4-dyr" eventType="touchUpInside" id="syT-df-Lus"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="QJo-3l-FE8"/>
                     </view>
                     <connections>
+                        <outlet property="connecButton" destination="A7T-EV-BT4" id="aq3-6P-xjq"/>
+                        <outlet property="editButton" destination="doQ-gO-75e" id="8aA-hC-XoL"/>
                         <outlet property="humidityLabel" destination="JlV-r7-w9I" id="04g-cC-ejY"/>
                         <outlet property="illuminationLabel" destination="qoj-JS-hv1" id="6pB-So-2u6"/>
+                        <outlet property="spaceNameFiled" destination="JWk-Db-NaT" id="j9Q-dm-GmS"/>
                         <outlet property="spaceNameLabel" destination="RjZ-tf-FE3" id="eVC-yV-ggb"/>
                         <outlet property="temperatureLabel" destination="zgw-gA-Kjd" id="G2q-Yk-MsB"/>
                         <outlet property="voltageLabel" destination="Tky-6D-02x" id="vYW-Gx-ohn"/>
@@ -628,10 +576,91 @@
             </objects>
             <point key="canvasLocation" x="2571.0144927536235" y="37.5"/>
         </scene>
+        <!--Modal View Controller-->
+        <scene sceneID="cFz-Tu-ro9">
+            <objects>
+                <viewController storyboardIdentifier="ModalDevices" id="zRV-p4-S5C" customClass="ModalViewController" customModule="HermesApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UCj-Af-10h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lsF-RU-YRe">
+                                <rect key="frame" x="55" y="252" width="303" height="391"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tY-CA-aWr">
+                                        <rect key="frame" x="8" y="95" width="62" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Codigo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZe-0L-0kK">
+                                        <rect key="frame" x="8" y="188" width="55" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etI-bw-Xbr">
+                                        <rect key="frame" x="8" y="299" width="295" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="ACEPTAR"/>
+                                        <connections>
+                                            <action selector="tapAccept:" destination="zRV-p4-S5C" eventType="touchUpInside" id="dJ2-oH-SJN"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fQH-3D-iA2">
+                                        <rect key="frame" x="5" y="124" width="295" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vcU-wn-s9p">
+                                        <rect key="frame" x="4" y="217" width="295" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQ8-VT-l9l">
+                                        <rect key="frame" x="8" y="349" width="295" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="CANCELAR">
+                                            <color key="titleColor" red="1" green="0.28037920589999998" blue="0.2568605135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tapCancel:" destination="zRV-p4-S5C" eventType="touchUpInside" id="NyS-56-xK5"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nuevo Dispositivo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRs-qF-R6s">
+                                        <rect key="frame" x="61" y="8" width="180" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Gvn-Sh-GlA"/>
+                    </view>
+                    <connections>
+                        <outlet property="actuatorIdField" destination="vcU-wn-s9p" id="WG7-Ag-fPH"/>
+                        <outlet property="actuatorNameField" destination="fQH-3D-iA2" id="dSp-KL-dZm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZFc-JA-UQn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3368" y="38"/>
+        </scene>
     </scenes>
     <resources>
         <image name="bombillo" width="612" height="612"/>
-        <image name="despertdor" width="256" height="256"/>
+        <image name="plus-1" width="256" height="256"/>
         <image name="space" width="225" height="225"/>
     </resources>
 </document>

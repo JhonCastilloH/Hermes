@@ -14,17 +14,28 @@ class ActuatorsListViewController: UIViewController {
     @IBOutlet weak var collectionViewB: UICollectionView!
     
     // MARK: - Instance Properties
+    var modelController : ModelController!
     var actuator:Actuator?
     var indexSelected = -1
-    public var actuatorList = ActuatorList.getActuators(by: "Mi Sala")
+    public var actuatorList:ActuatorList!
     var space:Space?
-    public var spaceList = SpaceList.getSpaces()
+    public var spaceList:SpaceList!
     var spaceSelected: Int? = 0
     var actuatorSelected: Int?
     
     let reuseIdentifierB = "actuatorCell" // also enter this string as the cell identifier in the storyboard
    let reuseIdentifierA = "spaceCell" // also enter this string as the cell identifier in the storyboard
   
+    
+    // MARK: - lifecicle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print(modelController.spacesList.title)
+        spaceList = self.modelController.spacesList
+        actuatorList =  modelController.get(actuatorsBy: self.spaceList.spaces[spaceSelected!].name)
+        self.collectionViewA.reloadData()
+        self.collectionViewB.reloadData()
+    }
     
 }
 
@@ -44,14 +55,15 @@ extension ActuatorsListViewController : UICollectionViewDataSource {
           // get a reference to our storyboard cell
           // Use the outlet in our custom class to get a reference to the UILabel in the cell
           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierA, for: indexPath as IndexPath) as! SpaceCollectionViewCell
-          
           cell.myButton.setTitle(self.spaceList.spaces[indexPath.item].name, for: .normal)
           cell.indexCell = indexPath.row
+          cell.clicked = indexPath.row == spaceSelected
+          cell.setupActuatorCell()
           cell.delegate = self
           return cell
         }else if (collectionView == self.collectionViewB) {
           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierB, for: indexPath as IndexPath) as! ActuatorCollectionViewCell
-          
+          //cell.myButton.isEnabled = false
           cell.actuator = self.actuatorList.actuators[indexPath.item]
           cell.setupActuatorCell()
           cell.indexCell = indexPath.row
@@ -67,10 +79,11 @@ extension ActuatorsListViewController : UICollectionViewDataSource {
   
    @IBAction func gotoSpaceView(_ sender: UIButton) {
     if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "spaceVC") as? SpaceViewController {
-      viewController.space = self.spaceList.spaces[spaceSelected!]
-      if let navigator = self.navigationController {
-        navigator.pushViewController(viewController, animated: true)
-      }
+        viewController.modelController = self.modelController
+        viewController.space = self.spaceList.spaces[spaceSelected!]
+          if let navigator = self.navigationController {
+            navigator.pushViewController(viewController, animated: true)
+          }
     }
   }
   
@@ -91,6 +104,7 @@ extension ActuatorsListViewController : cellButtonDelegate{
         
         if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "actuatorVC") as? ViewController {
           viewController.actuator = self.actuatorList.actuators[index]
+          viewController.modelController = self.modelController
             if let navigator = self.navigationController {
                 navigator.pushViewController(viewController, animated: true)
             }
@@ -104,8 +118,9 @@ extension ActuatorsListViewController : cellSpaceButtonDelegate{
   func didSelectSpaceButton(_ index: Int) {
     print("You selected the space button cell!")
     self.spaceSelected = index
-    self.actuatorList = ActuatorList.getActuators(by: self.spaceList.spaces[index].name)
+    self.actuatorList = modelController.get(actuatorsBy: self.spaceList.spaces[index].name)
     self.collectionViewB.reloadData()
+    self.collectionViewA.reloadData()
   }
   
 }

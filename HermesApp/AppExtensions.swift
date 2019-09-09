@@ -11,8 +11,8 @@ extension UIImage {
   
   enum AssetIdentifier: String {
     case Bombillo = "bombillo"
-    case Ventilador = "despertdor"
-    case Sirena = "romantico"
+    case Ventilador = "ventilador"
+    case Sirena = "sirena"
     
     static let values = [Bombillo, Ventilador, Sirena]
   }

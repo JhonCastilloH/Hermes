@@ -7,9 +7,11 @@
 //
 
 public struct Space {
+    public var id: String
     public var name: String
     public var voltaje: Float
     public var temperatura: Float
     public var humedad: Float
     public var iluminacion: Float
+    public var actuators : [[String: String]]
 }

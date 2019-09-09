@@ -17,12 +17,13 @@ class SpaceCollectionViewCell: UICollectionViewCell {
   @IBOutlet weak var myButton: UIButton!
   var indexCell: Int?
   var space:Space?
+  var clicked: Bool = false
   
   //MARK: - Actions
   func setupActuatorCell() {
-    let image = UIImage(assetIdentifier: UIImage.AssetIdentifier(rawValue: space!.name)!)
+    let image = UIImage(named: "space" + (clicked ? "" : "_gris"))
     myButton.setBackgroundImage(image, for: .normal)
-    myButton.setTitle(space!.name, for: .normal)
+    //myButton.setTitle(space!.name, for: .normal)
     
   }
   

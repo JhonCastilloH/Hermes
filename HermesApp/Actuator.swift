@@ -7,10 +7,13 @@
 //
 
 public struct Actuator {
+    public var id: String
     public var name: String
+    public var type: String
     public var switchBulb: Bool
     public var level: Float
     public var timeLeft: Int
     public var mode = "onOff"
+    public var spaceID: String
 }
 
