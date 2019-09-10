@@ -16,7 +16,6 @@ class ViewController: UIViewController {
   @IBOutlet weak var OnOff: UIButton!
   @IBOutlet weak var slider: UISlider!
   @IBOutlet weak var sliderValue: UILabel!
-  @IBOutlet weak var editButton: UIButton!
   @IBOutlet weak var actuatorNameFiled: UITextField!
   @IBOutlet weak var actuatorNameLabel: UILabel!
     
@@ -25,7 +24,7 @@ class ViewController: UIViewController {
   var modelController : ModelController!
   var actuator:Actuator?
   var timer:Timer?
-  let image = UIImage(named: "bombillo")
+  var image = UIImage(named: "bombillo")
   var filteredImage: CIImage?
   var noirImage: UIImage?
     
@@ -34,12 +33,30 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     self.title = actuator?.name
     self.actuatorNameLabel.text = actuator?.name
+    let tap = UITapGestureRecognizer(target: self, action: #selector(tapFunction(gesture:) ))
+    actuatorNameLabel.isUserInteractionEnabled = true
+    actuatorNameLabel.addGestureRecognizer(tap)
+    self.image = UIImage(assetIdentifier: UIImage.AssetIdentifier(rawValue: actuator!.type)!)
+    OnOff.setImage(image, for: .normal)
     noirImage = image?.noir
-    // Do any additional setup after loading the view.
   }
   
   // MARK: - actions
-  
+  @objc func tapFunction(gesture:UITapGestureRecognizer) {
+    self.actuatorNameFiled.isHidden = false
+    self.actuatorNameLabel.isHidden = true
+    actuatorNameLabel.isUserInteractionEnabled = false
+    }
+    
+    @IBAction func endEditName(_ sender: Any) {
+        self.actuatorNameFiled.isHidden = true
+        self.actuatorNameLabel.isHidden = false
+        self.actuator?.name = self.actuatorNameFiled.text!
+        modelController.update(self.actuator!)
+        self.actuatorNameLabel.text = self.actuator?.name
+        actuatorNameLabel.isUserInteractionEnabled = true
+    }
+    
   @IBAction func onOffSwitch(_ sender: Any) {
     actuator!.mode = "onOff"
     if actuator!.switchBulb {
@@ -103,23 +120,6 @@ class ViewController: UIViewController {
         modelController.delete(self.actuator!)
         self.navigationController?.popViewController(animated: true)
     }
-    
-    @IBAction func editName(_ sender: Any) {
-        let button = sender as! UIButton
-        if (button.titleLabel?.text == "Guardar nombre") {
-            self.actuatorNameFiled.isHidden = true
-            self.actuatorNameLabel.isHidden = false
-            self.actuator?.name = self.actuatorNameFiled.text!
-            modelController.update(self.actuator!)
-            self.editButton.setTitle("Cambiar nombre", for: .normal)
-            self.actuatorNameLabel.text = self.actuator?.name
-        }else{
-            self.actuatorNameFiled.isHidden = false
-            self.actuatorNameLabel.isHidden = true
-            self.editButton.setTitle("Guardar nombre", for: .normal)
-        }
-    }
-    
    
     
     @IBAction func sliderValueDidEnd(_ sender: UISlider!) {

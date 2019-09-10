@@ -15,10 +15,9 @@ class SpaceViewController: UIViewController {
   @IBOutlet weak var humidityLabel: UILabel!
   @IBOutlet weak var illuminationLabel: UILabel!
   @IBOutlet weak var voltageLabel: UILabel!
-  @IBOutlet weak var connecButton: UIButton!
   @IBOutlet weak var editButton: UIButton!
   @IBOutlet weak var spaceNameFiled: UITextField!
-    
+  @IBOutlet weak var iconButton: UIButton!
   
   // MARK: - Properties
   var modelController : ModelController!
@@ -37,22 +36,28 @@ class SpaceViewController: UIViewController {
     self.humidityLabel.text = "\(String(describing: space!.humedad))" + "mm"
     self.voltageLabel.text = "\(String(describing: space!.voltaje))" + "V"
     self.illuminationLabel.text = "\(String(describing: space!.iluminacion))" + "lm"
-    self.connecButton.setTitle((space?.name != "Agregar") ? "D E S C O N E C T A R" : "C O N E C T A R", for: .normal)
     self.spaceNameFiled.isHidden = (space?.name != "Agregar") ? true : false
     self.spaceNameLabel.isHidden = (space?.name != "Agregar") ? false : true
     navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Dispositivos", style: .plain, target: self, action: #selector(showDevices))
+    
+    let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPress(gesture:) ))
+    iconButton.addGestureRecognizer(longPress)
   }
     
+    
     // MARK: - actions
-    @IBAction func save(_ sender: AnyObject) {
-        if (space?.name != "Agregar") {
+    @objc func longPress(gesture: UILongPressGestureRecognizer) {
+        if gesture.state == UIGestureRecognizer.State.began {
+            if (space?.name != "Agregar") {
                 modelController.delete(self.space!)
-        }else{
-            self.space?.name = self.spaceNameFiled.text!
-            modelController.update(self.space!)
+            }else{
+                self.space?.name = self.spaceNameFiled.text!
+                modelController.update(self.space!)
+            }
+            self.navigationController?.popViewController(animated: true)
         }
-        self.navigationController?.popViewController(animated: true)
     }
+    
     
     @IBAction func showDevices(_ sender: AnyObject) {
         if let modalViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ModalDevices") as? ModalViewController {
@@ -82,6 +87,11 @@ class SpaceViewController: UIViewController {
         }
         
         
+    }
+    
+    @objc func long() {
+        
+        print("Long press")
     }
     
 

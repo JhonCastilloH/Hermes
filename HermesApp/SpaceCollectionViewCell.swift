@@ -10,6 +10,8 @@ import UIKit
 
 protocol cellSpaceButtonDelegate: AnyObject{
   func didSelectSpaceButton(_ index: Int)
+  func didLongSelectSpaceButton(_ index: Int)
+    
 }
 
 class SpaceCollectionViewCell: UICollectionViewCell {
@@ -25,9 +27,19 @@ class SpaceCollectionViewCell: UICollectionViewCell {
     myButton.setBackgroundImage(image, for: .normal)
     //myButton.setTitle(space!.name, for: .normal)
     
-  }
+    let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPress(gesture:) ))
+    myButton.addGestureRecognizer(longPress)
+    }
+    
+    
+    //MARK: - Action Pass back view Details
+    @objc func longPress(gesture: UILongPressGestureRecognizer) {
+        if gesture.state == UIGestureRecognizer.State.began {
+            self.delegate?.didLongSelectSpaceButton(indexCell!)
+        }
+    }
   
-  //MARK: - Action Pass back view Details
+  
   @IBAction func actionDone(_ sender: UIButton) {
     self.delegate?.didSelectSpaceButton(indexCell!)
   }

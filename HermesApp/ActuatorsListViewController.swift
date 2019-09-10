@@ -12,6 +12,8 @@ class ActuatorsListViewController: UIViewController {
     // MARK: - Instance Outlets
     @IBOutlet weak var collectionViewA: UICollectionView!
     @IBOutlet weak var collectionViewB: UICollectionView!
+    @IBOutlet weak var panelViewA: UIView!
+    @IBOutlet weak var panelViewB: UIView!
     
     // MARK: - Instance Properties
     var modelController : ModelController!
@@ -35,6 +37,13 @@ class ActuatorsListViewController: UIViewController {
         actuatorList =  modelController.get(actuatorsBy: self.spaceList.spaces[spaceSelected!].name)
         self.collectionViewA.reloadData()
         self.collectionViewB.reloadData()
+        self.panelViewA.layer.borderColor = UIColor.blue.cgColor
+        self.panelViewA.layer.borderWidth = 2
+        self.panelViewA.layer.cornerRadius = 10
+        self.panelViewB.layer.borderColor = UIColor.blue.cgColor
+        self.panelViewB.layer.borderWidth = 2
+        self.panelViewB.layer.cornerRadius = 10
+        
     }
     
 }
@@ -77,15 +86,7 @@ extension ActuatorsListViewController : UICollectionViewDataSource {
       
     }
   
-   @IBAction func gotoSpaceView(_ sender: UIButton) {
-    if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "spaceVC") as? SpaceViewController {
-        viewController.modelController = self.modelController
-        viewController.space = self.spaceList.spaces[spaceSelected!]
-          if let navigator = self.navigationController {
-            navigator.pushViewController(viewController, animated: true)
-          }
-    }
-  }
+  
   
 }
 
@@ -111,7 +112,15 @@ extension ActuatorsListViewController : cellButtonDelegate{
         }
     }
     
-    
+    func didLongSelectSpaceButton(_ index: Int) {
+        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "spaceVC") as? SpaceViewController {
+            viewController.modelController = self.modelController
+            viewController.space = self.spaceList.spaces[index]
+            if let navigator = self.navigationController {
+                navigator.pushViewController(viewController, animated: true)
+            }
+        }
+    }
 }
 
 extension ActuatorsListViewController : cellSpaceButtonDelegate{
