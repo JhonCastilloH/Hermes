@@ -65,6 +65,7 @@ extension ActuatorsListViewController : UICollectionViewDataSource {
           // Use the outlet in our custom class to get a reference to the UILabel in the cell
           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierA, for: indexPath as IndexPath) as! SpaceCollectionViewCell
           cell.myButton.setTitle(self.spaceList.spaces[indexPath.item].name, for: .normal)
+          cell.myButton.isEnabled = self.spaceList.spaces[indexPath.item].enable
           cell.indexCell = indexPath.row
           cell.clicked = indexPath.row == spaceSelected
           cell.setupActuatorCell()
@@ -72,7 +73,7 @@ extension ActuatorsListViewController : UICollectionViewDataSource {
           return cell
         }else if (collectionView == self.collectionViewB) {
           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierB, for: indexPath as IndexPath) as! ActuatorCollectionViewCell
-          //cell.myButton.isEnabled = false
+          cell.myButton.isEnabled = self.actuatorList.actuators[indexPath.item].enable
           cell.actuator = self.actuatorList.actuators[indexPath.item]
           cell.setupActuatorCell()
           cell.indexCell = indexPath.row
@@ -95,6 +96,13 @@ extension ActuatorsListViewController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
+        if let modalViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ModalDevices") as? ModalViewController {
+            definesPresentationContext = true
+            modalViewController.modalPresentationStyle = .overCurrentContext
+            modalViewController.view.frame = CGRect(x: 0, y: 0, width: 300, height: 450)
+            self.present(modalViewController, animated: false, completion: nil)
+            
+        }
     }
 }
 

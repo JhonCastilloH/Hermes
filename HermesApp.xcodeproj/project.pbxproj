@@ -16,8 +16,8 @@
 		840D47F823038965002A27B6 /* Actuator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D47F723038965002A27B6 /* Actuator.swift */; };
 		840D47FA23038AFE002A27B6 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D47F923038AFE002A27B6 /* Mocks.swift */; };
 		840D47FC23038B3C002A27B6 /* ActuatorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D47FB23038B3B002A27B6 /* ActuatorList.swift */; };
-		840F7A702321BF1200428DB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840F7A6F2321BF1100428DB6 /* Assets.xcassets */; };
 		841FB5A1232015C20066B016 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841FB5A0232015C20066B016 /* ModelController.swift */; };
+		8447375B23287D4900459B0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8447375A23287D4900459B0F /* Assets.xcassets */; };
 		845F65AC22FF2A9F00D36473 /* ActuatorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F65AB22FF2A9F00D36473 /* ActuatorCollectionViewCell.swift */; };
 		845F65AE22FF2B1300D36473 /* ActuatorsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F65AD22FF2B1300D36473 /* ActuatorsListViewController.swift */; };
 		846FD4222310A4B10051D200 /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FD4212310A4B10051D200 /* Space.swift */; };
@@ -38,8 +38,8 @@
 		840D47F723038965002A27B6 /* Actuator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actuator.swift; sourceTree = "<group>"; };
 		840D47F923038AFE002A27B6 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		840D47FB23038B3B002A27B6 /* ActuatorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActuatorList.swift; sourceTree = "<group>"; };
-		840F7A6F2321BF1100428DB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		841FB5A0232015C20066B016 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
+		8447375A23287D4900459B0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		845F65AB22FF2A9F00D36473 /* ActuatorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActuatorCollectionViewCell.swift; sourceTree = "<group>"; };
 		845F65AD22FF2B1300D36473 /* ActuatorsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActuatorsListViewController.swift; sourceTree = "<group>"; };
 		846FD4212310A4B10051D200 /* Space.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
@@ -84,8 +84,8 @@
 				1587171023172B22005CAA2A /* SpaceViewController.swift */,
 				84D498422323E5100050D723 /* ModalViewController.swift */,
 				1583C06C22FDB51C00EAE57F /* Main.storyboard */,
-				840F7A6F2321BF1100428DB6 /* Assets.xcassets */,
 				1583C07122FDB51D00EAE57F /* LaunchScreen.storyboard */,
+				8447375A23287D4900459B0F /* Assets.xcassets */,
 				1583C07422FDB51D00EAE57F /* Info.plist */,
 				845F65AB22FF2A9F00D36473 /* ActuatorCollectionViewCell.swift */,
 				159FE2632315BBC900D0841D /* SpaceCollectionViewCell.swift */,
@@ -159,7 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1583C07322FDB51D00EAE57F /* LaunchScreen.storyboard in Resources */,
-				840F7A702321BF1200428DB6 /* Assets.xcassets in Resources */,
+				8447375B23287D4900459B0F /* Assets.xcassets in Resources */,
 				1583C06E22FDB51C00EAE57F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

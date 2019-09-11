@@ -45,7 +45,7 @@ class ModalViewController: UIViewController {
     }
     
     @IBAction func tapAccept(_ sender: UIButton) {
-        let actuator = Actuator(id: actuatorIdField.text!, name: actuatorNameField.text!, type: "", switchBulb: false, level: 0, timeLeft: 0, mode: "onOff", spaceID: "")
+        let actuator = Actuator(id: actuatorIdField.text!, name: actuatorNameField.text!, enable: true, type: "", switchBulb: false, level: 0, timeLeft: 0, mode: "onOff", spaceID: "")
         self.delegate?.didSelectAcceptButton(actuator)
         dismiss(animated: true, completion: nil)
     }

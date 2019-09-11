@@ -9,6 +9,7 @@
 public struct Actuator {
     public var id: String
     public var name: String
+    public var enable = false
     public var type: String
     public var switchBulb: Bool
     public var level: Float

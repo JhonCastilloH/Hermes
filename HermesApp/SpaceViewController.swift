@@ -85,8 +85,6 @@ class SpaceViewController: UIViewController {
             self.spaceNameLabel.isHidden = true
             self.editButton.setTitle("Guardar nombre", for: .normal)
         }
-        
-        
     }
     
     @objc func long() {

@@ -11,14 +11,32 @@ extension UIImage {
   
   enum AssetIdentifier: String {
     case Bombillo = "bombillo"
-    case Ventilador = "ventilador"
     case Sirena = "sirena"
+    case Humo = "humo"
+    case Ventilador = "ventilador"
     
-    static let values = [Bombillo, Ventilador, Sirena]
+    static let values = [Bombillo, Humo, Sirena, Ventilador]
   }
   
   convenience init!(assetIdentifier: AssetIdentifier) {
     self.init(named: assetIdentifier.rawValue)
   }
   
+}
+
+extension UIButton {
+    
+    enum AssetIdentifier: String {
+        case Bombillo = "bombillo"
+        case Sirena = "sirena"
+        case Humo = "humo"
+        case Ventilador = "ventilador"
+        
+        static let values = [Bombillo, Humo, Sirena, Ventilador]
+    }
+    
+    //convenience init!(assetIdentifier: AssetIdentifier) {
+      //  self.setTitle(assetIdentifier.rawValue, for: .normal)
+    //}
+    
 }

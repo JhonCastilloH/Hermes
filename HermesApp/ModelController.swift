@@ -55,11 +55,12 @@ class ModelController {
     
     func delete(_ actuator: Actuator) {
         let index = spacesList.spaces.firstIndex(where: { $0.id == actuator.spaceID})!
-        spacesList.spaces[index].actuators = spacesList.spaces[index].actuators.filter{ $0["id"] != actuator.id}
+        //spacesList.spaces[index].actuators = spacesList.spaces[index].actuators.filter{ $0["id"] != actuator.id}
         
         for (index, old) in actuatorList.actuators.enumerated() {
             if old.id == actuator.id {
-                actuatorList.actuators.remove(at: index)
+                //actuatorList.actuators.remove(at: index)
+                actuatorList.actuators[index].enable = false
                 break
             }
         }

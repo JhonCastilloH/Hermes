@@ -9,6 +9,7 @@
 public struct Space {
     public var id: String
     public var name: String
+    public var enable = false
     public var voltaje: Float
     public var temperatura: Float
     public var humedad: Float
