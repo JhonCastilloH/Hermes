@@ -46,6 +46,19 @@ class ActuatorsListViewController: UIViewController {
         
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        APIManager.getSpaces(onComplete: { spaces in
+            self.spaceList = SpaceList(spaces: spaces, title: "Favorites")
+            DispatchQueue.main.async { // Correct
+                self.collectionViewA.reloadData()
+            }
+            
+        })
+        
+    }
+    
 }
 
 extension ActuatorsListViewController : UICollectionViewDataSource {
@@ -111,7 +124,7 @@ extension ActuatorsListViewController : cellButtonDelegate{
         print("You selected the button cell!")
         
         
-        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "actuatorVC") as? ViewController {
+        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "actuatorVC") as? ActuatorViewController {
           viewController.actuator = self.actuatorList.actuators[index]
           viewController.modelController = self.modelController
             if let navigator = self.navigationController {

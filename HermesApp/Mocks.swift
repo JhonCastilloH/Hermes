@@ -32,6 +32,22 @@ extension ActuatorList {
         return ActuatorList(actuators: actuators, title: "mis actuadores")
     }
 
+    public static func getModeTypes(by type:String) ->[String] {
+        var modes: [String] = []
+        switch type {
+        case "bombillo":
+            modes = ["Detalles", "Temporizador", "Romantico", "Persuacion"]
+        case "humo":
+            modes = ["Detalles"]
+        case "sirena":
+            modes = ["Detalles", "Prueba", "Continuo", "Policial"]
+        case "ventilador":
+            modes = ["Detalles", "Temporizador", "Wave", "Fate"]
+        default:
+            print("Some other character")
+        }
+        return modes
+    }
 }
 
 

@@ -23,20 +23,3 @@ extension UIImage {
   }
   
 }
-
-extension UIButton {
-    
-    enum AssetIdentifier: String {
-        case Bombillo = "bombillo"
-        case Sirena = "sirena"
-        case Humo = "humo"
-        case Ventilador = "ventilador"
-        
-        static let values = [Bombillo, Humo, Sirena, Ventilador]
-    }
-    
-    //convenience init!(assetIdentifier: AssetIdentifier) {
-      //  self.setTitle(assetIdentifier.rawValue, for: .normal)
-    //}
-    
-}

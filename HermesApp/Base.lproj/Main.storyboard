@@ -159,16 +159,16 @@
             </objects>
             <point key="canvasLocation" x="57.971014492753625" y="37.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Actuator View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="actuatorVC" id="BYZ-38-t0r" customClass="ViewController" customModule="HermesApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="actuatorVC" id="BYZ-38-t0r" customClass="ActuatorViewController" customModule="HermesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8o0-BQ-hpR">
-                                <rect key="frame" x="246" y="604" width="40" height="30"/>
+                                <rect key="frame" x="239" y="604" width="125" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Timer"/>
                                 <connections>
@@ -176,7 +176,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQk-P1-PS2">
-                                <rect key="frame" x="230" y="642" width="73" height="30"/>
+                                <rect key="frame" x="239" y="642" width="125" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Persuation"/>
                                 <connections>
@@ -184,7 +184,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uob-MJ-GDG">
-                                <rect key="frame" x="79" y="604" width="47" height="30"/>
+                                <rect key="frame" x="40" y="604" width="125" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Details"/>
                                 <connections>
@@ -192,7 +192,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5b-k1-UmT">
-                                <rect key="frame" x="70" y="642" width="65" height="30"/>
+                                <rect key="frame" x="40" y="642" width="125" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Romantic"/>
                                 <connections>
@@ -219,20 +219,13 @@
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="iNl-bR-eTw">
-                                <rect key="frame" x="48" y="336" width="249" height="30"/>
+                                <rect key="frame" x="48" y="336" width="318" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="sliderValueDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="lRY-gt-7Mc"/>
                                     <action selector="sliderValueDidEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="2Yh-QO-XF2"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZK-GR-lAB">
-                                <rect key="frame" x="309" y="336" width="55" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPV-wU-IRL">
                                 <rect key="frame" x="40" y="441" width="349" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -250,12 +243,23 @@
                                     <action selector="endEditName:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="3Gq-Fh-GEK"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZK-GR-lAB">
+                                <rect key="frame" x="188" y="316" width="38" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="Mode" destination="uob-MJ-GDG" id="Lu5-hJ-rOW"/>
+                        <outlet property="ModeButton1" destination="uob-MJ-GDG" id="bwc-Xb-AwS"/>
+                        <outlet property="ModeButton2" destination="8o0-BQ-hpR" id="AYe-Xb-yig"/>
+                        <outlet property="ModeButton3" destination="V5b-k1-UmT" id="d9R-1p-bRb"/>
+                        <outlet property="ModeButton4" destination="QQk-P1-PS2" id="SWf-9s-zP4"/>
                         <outlet property="OnOff" destination="uze-61-Ygh" id="n1H-9d-orO"/>
                         <outlet property="Temporizator" destination="8o0-BQ-hpR" id="I6P-6H-KQq"/>
                         <outlet property="actuatorNameFiled" destination="Uqh-D2-V7F" id="rXZ-iE-K22"/>

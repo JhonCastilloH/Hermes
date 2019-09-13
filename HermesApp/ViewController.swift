@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ActuatorViewController.swift
 //  HermesApp
 //
 //  Created by John Edisson Castillo Hernandez on 8/9/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ActuatorViewController: UIViewController {
 
   // Outlets
   @IBOutlet weak var Mode: UIButton!
@@ -19,6 +19,10 @@ class ViewController: UIViewController {
   @IBOutlet weak var actuatorNameFiled: UITextField!
   @IBOutlet weak var actuatorNameLabel: UILabel!
     
+    @IBOutlet weak var ModeButton1: UIButton!
+    @IBOutlet weak var ModeButton2: UIButton!
+    @IBOutlet weak var ModeButton3: UIButton!
+    @IBOutlet weak var ModeButton4: UIButton!
   
   // MARK: - Properties
   var modelController : ModelController!
@@ -39,6 +43,23 @@ class ViewController: UIViewController {
     self.image = UIImage(assetIdentifier: UIImage.AssetIdentifier(rawValue: actuator!.type)!)
     OnOff.setImage(image, for: .normal)
     noirImage = image?.noir
+    
+    let modeList = ActuatorList.getModeTypes(by: actuator!.type)
+    let buttonList = [ModeButton1, ModeButton2, ModeButton3, ModeButton4]
+    for index in 0...3 {
+        if index < modeList.count {
+            buttonList[index]?.isHidden = false
+            buttonList[index]?.setTitle(modeList[index], for: .normal)
+        }else{
+            buttonList[index]?.isHidden = true
+        }
+    }
+    
+    
+    if (actuator?.type == "humo" || actuator?.type == "sirena") {
+        slider.isHidden = true
+        sliderValue.isHidden = true
+    }
   }
   
   // MARK: - actions
