@@ -7,10 +7,21 @@
 //
 
 class ModelController {
+    //var spacesList = SpaceList.getSpaces()
+    //var actuatorList = ActuatorList.getActuators()
+    
     var spacesList = SpaceList.getSpaces()
     var actuatorList = ActuatorList.getActuators()
     
-    var favorites = SpaceList(spaces: [], title: "Favorites")
+    init() {
+        APIManager.getActiators(onComplete: { actuators in
+            self.actuatorList = ActuatorList(actuators: actuators, title: "Favorites")           
+        })
+        
+        APIManager.getSpaces(onComplete: { spaces in
+            self.spacesList = SpaceList(spaces: spaces, title: "Favorites")
+        })
+    }
     
     func update(_ space: Space) {
         for (index, old) in spacesList.spaces.enumerated() {
@@ -19,6 +30,11 @@ class ModelController {
                 break
             }
         }
+        APIManager.updateSpace(space: space, onSuccess: { json in
+            print("Espacio Actualizado")
+        }, onFailure: { error in
+            print(error)
+        })
     }
     
     func delete(_ space: Space) {

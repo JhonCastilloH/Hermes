@@ -37,10 +37,10 @@ class ActuatorsListViewController: UIViewController {
         actuatorList =  modelController.get(actuatorsBy: self.spaceList.spaces[spaceSelected!].name)
         self.collectionViewA.reloadData()
         self.collectionViewB.reloadData()
-        self.panelViewA.layer.borderColor = UIColor.blue.cgColor
+        self.panelViewA.layer.borderColor = UIColor(named: "Color-1")?.cgColor
         self.panelViewA.layer.borderWidth = 2
         self.panelViewA.layer.cornerRadius = 10
-        self.panelViewB.layer.borderColor = UIColor.blue.cgColor
+        self.panelViewB.layer.borderColor = UIColor(named: "Color-1")?.cgColor
         self.panelViewB.layer.borderWidth = 2
         self.panelViewB.layer.cornerRadius = 10
         
@@ -49,12 +49,20 @@ class ActuatorsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         APIManager.getSpaces(onComplete: { spaces in
-            self.spaceList = SpaceList(spaces: spaces, title: "Favorites")
-            DispatchQueue.main.async { // Correct
-                self.collectionViewA.reloadData()
-            }
-            
+            self.modelController.spacesList = SpaceList(spaces: spaces, title: "Favorites")
+            self.spaceList = self.modelController.spacesList
+            APIManager.getActiators(onComplete: { actuators in
+                self.modelController.actuatorList = ActuatorList(actuators: actuators, title: "Favorites")
+                self.actuatorList =  self.modelController.get(actuatorsBy: self.spaceList.spaces[self.spaceSelected!].name)
+                
+                DispatchQueue.main.async { // Correct
+                    self.collectionViewA.reloadData()
+                    self.collectionViewB.reloadData()
+                }
+            })
         })
         
     }
@@ -109,13 +117,17 @@ extension ActuatorsListViewController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
-        if let modalViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ModalDevices") as? ModalViewController {
-            definesPresentationContext = true
-            modalViewController.modalPresentationStyle = .overCurrentContext
-            modalViewController.view.frame = CGRect(x: 0, y: 0, width: 300, height: 450)
-            self.present(modalViewController, animated: false, completion: nil)
-            
+        if collectionView == self.collectionViewA {
+            if let modalViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ModalDevices") as? ModalViewController {
+                definesPresentationContext = true
+                modalViewController.modalPresentationStyle = .overCurrentContext
+                modalViewController.view.frame = CGRect(x: 0, y: 0, width: 300, height: 450)
+                self.present(modalViewController, animated: false, completion: nil)
+                
+            }
         }
+        
+        
     }
 }
 

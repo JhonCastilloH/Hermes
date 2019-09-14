@@ -29,7 +29,7 @@ public struct Space {
 }
 
 
-extension Space: Decodable {
+extension Space: Encodable, Decodable {
     enum MyStructKeys: String, CodingKey { // declaring our keys
         case id = "id"
         case name = "name"
@@ -38,7 +38,7 @@ extension Space: Decodable {
         case temperatura = "temperatura"
         case humedad = "humedad"
         case iluminacion = "iluminacion"
-        case actuators  = "actuators"
+        case actuators  = "actuadores"
     }
     
     public init(from decoder: Decoder) throws {
