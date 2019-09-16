@@ -9,7 +9,7 @@
 public struct Space {
     let id: String
     var name: String
-    let enable: Bool
+    var enable: Bool
     let voltaje: Float
     let temperatura: Float
     let humedad: Float
@@ -38,7 +38,7 @@ extension Space: Encodable, Decodable {
         case temperatura = "temperatura"
         case humedad = "humedad"
         case iluminacion = "iluminacion"
-        case actuators  = "actuadores"
+        case actuators  = "actuators"
     }
     
     public init(from decoder: Decoder) throws {

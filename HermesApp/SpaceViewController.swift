@@ -38,7 +38,7 @@ class SpaceViewController: UIViewController {
     self.illuminationLabel.text = "\(String(describing: space!.iluminacion))" + "lm"
     self.spaceNameFiled.isHidden = (space?.name != "Agregar") ? true : false
     self.spaceNameLabel.isHidden = (space?.name != "Agregar") ? false : true
-    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Dispositivos", style: .plain, target: self, action: #selector(showDevices))
+    
     
     let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPress(gesture:) ))
     iconButton.addGestureRecognizer(longPress)
@@ -58,17 +58,6 @@ class SpaceViewController: UIViewController {
         }
     }
     
-    
-    @IBAction func showDevices(_ sender: AnyObject) {
-        if let modalViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ModalDevices") as? ModalViewController {
-            definesPresentationContext = true
-            modalViewController.modalPresentationStyle = .overCurrentContext
-            modalViewController.view.frame = CGRect(x: 0, y: 0, width: 300, height: 450)
-            modalViewController.delegate = self
-            self.present(modalViewController, animated: false, completion: nil)
-           
-        }
-    }
     
     
     @IBAction func editName(_ sender: Any) {
@@ -95,14 +84,5 @@ class SpaceViewController: UIViewController {
 
 }
 
-extension SpaceViewController : modalDelegate {
-    func didSelectAcceptButton(_ actuator: Actuator) {
-        var actuatorNew = actuator
-        actuatorNew.spaceID = space!.id
-        self.space?.actuators.append(["id": actuator.id, "name": actuator.name])
-        modelController.update(self.space!)
-        modelController.update(actuator)
-    }
-    
-}
+
 

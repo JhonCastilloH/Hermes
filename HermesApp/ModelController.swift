@@ -13,15 +13,6 @@ class ModelController {
     var spacesList = SpaceList.getSpaces()
     var actuatorList = ActuatorList.getActuators()
     
-    init() {
-        APIManager.getActiators(onComplete: { actuators in
-            self.actuatorList = ActuatorList(actuators: actuators, title: "Favorites")           
-        })
-        
-        APIManager.getSpaces(onComplete: { spaces in
-            self.spacesList = SpaceList(spaces: spaces, title: "Favorites")
-        })
-    }
     
     func update(_ space: Space) {
         for (index, old) in spacesList.spaces.enumerated() {
@@ -59,6 +50,11 @@ class ModelController {
         let index = spacesList.spaces.firstIndex(where: { $0.id == actuator.spaceID})!
         if let index2 = spacesList.spaces[index].actuators.firstIndex(where: { $0["id"] == actuator.id}){
             spacesList.spaces[index].actuators[index2]["name"] = actuator.name
+            APIManager.updateSpace(space: spacesList.spaces[index], onSuccess: { json in
+                print("Espacio Actualizado")
+            }, onFailure: { error in
+                print(error)
+            })
         }
        
         for (index, old) in actuatorList.actuators.enumerated() {
@@ -67,6 +63,11 @@ class ModelController {
                 break
             }
         }
+        APIManager.updateActuator(actuator: actuator, onSuccess: { json in
+            print("Dispositivo Actualizado")
+        }, onFailure: { error in
+            print(error)
+        })
     }
     
     func delete(_ actuator: Actuator) {

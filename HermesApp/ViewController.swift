@@ -11,7 +11,6 @@ import UIKit
 class ActuatorViewController: UIViewController {
 
   // Outlets
-  @IBOutlet weak var Mode: UIButton!
   @IBOutlet weak var Temporizator: UIButton!
   @IBOutlet weak var OnOff: UIButton!
   @IBOutlet weak var slider: UISlider!
@@ -179,13 +178,24 @@ class ActuatorViewController: UIViewController {
         let beginImage = CIImage(image: self.image!)
         let filter = CIFilter(name: "CIColorControls")
         filter!.setValue(beginImage, forKey: kCIInputImageKey)
-        filter!.setValue(sender.value/10, forKey: kCIInputBrightnessKey)
+        filter!.setValue(sender.value/10, forKey: kCIInputSaturationKey)
         if let ciimage = filter!.outputImage {
             filteredImage = ciimage
             OnOff.setImage(UIImage(ciImage: filteredImage!), for: .normal)
         }
         sliderValue.text =     "\(round(slider.value))"
     }
+    
+    // Mark : Navigation
+    @IBAction func showDetailsView(_ sender: Any) {
+        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "detailsVC") as? DetailActuatorViewController {
+            viewController.actuator = self.actuator
+            if let navigator = self.navigationController {
+                navigator.pushViewController(viewController, animated: true)
+            }
+        }
+    }
+    
   
 }
 

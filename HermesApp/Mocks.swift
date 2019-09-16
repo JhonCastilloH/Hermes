@@ -36,13 +36,13 @@ extension ActuatorList {
         var modes: [String] = []
         switch type {
         case "bombillo":
-            modes = ["Detalles", "Temporizador", "Romantico", "Persuacion"]
+            modes = ["Detalles", "Dormir", "Romantico", "Persuacion"]
         case "humo":
             modes = ["Detalles"]
         case "sirena":
-            modes = ["Detalles", "Prueba", "Continuo", "Policial"]
+            modes = ["Detalles", "Timbre", "Pulsacion", "Policial"]
         case "ventilador":
-            modes = ["Detalles", "Temporizador", "Wave", "Fate"]
+            modes = ["Detalles", "Tiempo", "Ritmo", "Doppler"]
         default:
             print("Some other character")
         }

@@ -43,7 +43,6 @@ class ActuatorsListViewController: UIViewController {
         self.panelViewB.layer.borderColor = UIColor(named: "Color-1")?.cgColor
         self.panelViewB.layer.borderWidth = 2
         self.panelViewB.layer.cornerRadius = 10
-        
     }
     
     override func viewDidLoad() {
@@ -54,13 +53,15 @@ class ActuatorsListViewController: UIViewController {
         APIManager.getSpaces(onComplete: { spaces in
             self.modelController.spacesList = SpaceList(spaces: spaces, title: "Favorites")
             self.spaceList = self.modelController.spacesList
-            APIManager.getActiators(onComplete: { actuators in
+            
+            APIManager.getActuators(onComplete: { actuators in
                 self.modelController.actuatorList = ActuatorList(actuators: actuators, title: "Favorites")
                 self.actuatorList =  self.modelController.get(actuatorsBy: self.spaceList.spaces[self.spaceSelected!].name)
                 
                 DispatchQueue.main.async { // Correct
                     self.collectionViewA.reloadData()
                     self.collectionViewB.reloadData()
+                    self.space = self.spaceList.spaces[self.spaceSelected!]
                 }
             })
         })
@@ -87,6 +88,7 @@ extension ActuatorsListViewController : UICollectionViewDataSource {
           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierA, for: indexPath as IndexPath) as! SpaceCollectionViewCell
           cell.myButton.setTitle(self.spaceList.spaces[indexPath.item].name, for: .normal)
           cell.myButton.isEnabled = self.spaceList.spaces[indexPath.item].enable
+          cell.space = self.spaceList.spaces[indexPath.item]
           cell.indexCell = indexPath.row
           cell.clicked = indexPath.row == spaceSelected
           cell.setupActuatorCell()
@@ -118,10 +120,26 @@ extension ActuatorsListViewController : UICollectionViewDelegate {
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
         if collectionView == self.collectionViewA {
+            self.spaceSelected = indexPath.item
+            space = self.spaceList.spaces[indexPath.item]
             if let modalViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ModalDevices") as? ModalViewController {
                 definesPresentationContext = true
                 modalViewController.modalPresentationStyle = .overCurrentContext
                 modalViewController.view.frame = CGRect(x: 0, y: 0, width: 300, height: 450)
+                modalViewController.isTypeSpace = true
+                modalViewController.delegate = self
+                self.present(modalViewController, animated: false, completion: nil)
+                
+            }
+        }else if collectionView == self.collectionViewB {
+            self.actuatorSelected = indexPath.item
+            actuator = self.actuatorList.actuators[indexPath.item]
+            if let modalViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ModalDevices") as? ModalViewController {
+                definesPresentationContext = true
+                modalViewController.modalPresentationStyle = .overCurrentContext
+                modalViewController.view.frame = CGRect(x: 0, y: 0, width: 300, height: 450)
+                modalViewController.isTypeSpace = false
+                modalViewController.delegate = self
                 self.present(modalViewController, animated: false, completion: nil)
                 
             }
@@ -134,7 +152,7 @@ extension ActuatorsListViewController : UICollectionViewDelegate {
 extension ActuatorsListViewController : cellButtonDelegate{
     func didSelectButton(_ index: Int) {
         print("You selected the button cell!")
-        
+        self.actuatorSelected = index
         
         if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "actuatorVC") as? ActuatorViewController {
           viewController.actuator = self.actuatorList.actuators[index]
@@ -165,4 +183,35 @@ extension ActuatorsListViewController : cellSpaceButtonDelegate{
     self.collectionViewA.reloadData()
   }
   
+}
+
+extension ActuatorsListViewController : modalDelegate {
+    func didSelectAcceptButton(_ name: String, isTypeSpace: Bool) {
+        if !isTypeSpace {
+            var actuatorNew = self.actuator
+            actuatorNew?.name = name
+            actuatorNew?.enable = true
+            modelController.update(actuatorNew!)
+            if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "actuatorVC") as? ActuatorViewController {
+                viewController.actuator = actuatorNew
+                viewController.modelController = self.modelController
+                if let navigator = self.navigationController {
+                    navigator.pushViewController(viewController, animated: true)
+                }
+            }
+        }else {
+            var spaceNew = self.space
+            spaceNew?.name = name
+            spaceNew?.enable = true
+            modelController.update(spaceNew!)
+            if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "spaceVC") as? SpaceViewController {
+                viewController.modelController = self.modelController
+                viewController.space = spaceNew
+                if let navigator = self.navigationController {
+                    navigator.pushViewController(viewController, animated: true)
+                }
+            }
+        }
+        
+    }
 }

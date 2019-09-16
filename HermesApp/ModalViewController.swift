@@ -9,14 +9,16 @@
 import UIKit
 
 protocol modalDelegate: AnyObject{
-    func didSelectAcceptButton(_ actuator: Actuator)
+    func didSelectAcceptButton(_ name: String, isTypeSpace: Bool)
 }
 
 class ModalViewController: UIViewController {
     @IBOutlet weak var actuatorNameField: UITextField!
-    @IBOutlet weak var actuatorIdField: UITextField!
+    @IBOutlet weak var titleLabel: UILabel!
     
-    weak var delegate: modalDelegate?
+    
+        weak var delegate: modalDelegate?
+        var isTypeSpace: Bool?
     
     override func viewDidLoad() {
         //view.backgroundColor = UIColor.black.withAlphaComponent(0.7)
@@ -45,8 +47,7 @@ class ModalViewController: UIViewController {
     }
     
     @IBAction func tapAccept(_ sender: UIButton) {
-        let actuator = Actuator(id: actuatorIdField.text!, name: actuatorNameField.text!, enable: true, type: "", switchBulb: false, level: 0, timeLeft: 0, mode: "onOff", spaceID: "")
-        self.delegate?.didSelectAcceptButton(actuator)
+        self.delegate?.didSelectAcceptButton(self.actuatorNameField.text!, isTypeSpace: self.isTypeSpace!)
         dismiss(animated: true, completion: nil)
     }
 

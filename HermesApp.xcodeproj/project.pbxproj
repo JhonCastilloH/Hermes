@@ -18,6 +18,7 @@
 		840D47FC23038B3C002A27B6 /* ActuatorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D47FB23038B3B002A27B6 /* ActuatorList.swift */; };
 		841FB5A1232015C20066B016 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841FB5A0232015C20066B016 /* ModelController.swift */; };
 		8447375B23287D4900459B0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8447375A23287D4900459B0F /* Assets.xcassets */; };
+		844C1D36232F05DA00AC9C8E /* DetailActuatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C1D35232F05DA00AC9C8E /* DetailActuatorViewController.swift */; };
 		845F65AC22FF2A9F00D36473 /* ActuatorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F65AB22FF2A9F00D36473 /* ActuatorCollectionViewCell.swift */; };
 		845F65AE22FF2B1300D36473 /* ActuatorsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F65AD22FF2B1300D36473 /* ActuatorsListViewController.swift */; };
 		846FD4222310A4B10051D200 /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FD4212310A4B10051D200 /* Space.swift */; };
@@ -41,6 +42,7 @@
 		840D47FB23038B3B002A27B6 /* ActuatorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActuatorList.swift; sourceTree = "<group>"; };
 		841FB5A0232015C20066B016 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		8447375A23287D4900459B0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		844C1D35232F05DA00AC9C8E /* DetailActuatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailActuatorViewController.swift; sourceTree = "<group>"; };
 		845F65AB22FF2A9F00D36473 /* ActuatorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActuatorCollectionViewCell.swift; sourceTree = "<group>"; };
 		845F65AD22FF2B1300D36473 /* ActuatorsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActuatorsListViewController.swift; sourceTree = "<group>"; };
 		846FD4212310A4B10051D200 /* Space.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				1583C07422FDB51D00EAE57F /* Info.plist */,
 				845F65AB22FF2A9F00D36473 /* ActuatorCollectionViewCell.swift */,
 				159FE2632315BBC900D0841D /* SpaceCollectionViewCell.swift */,
+				844C1D35232F05DA00AC9C8E /* DetailActuatorViewController.swift */,
 				845F65AD22FF2B1300D36473 /* ActuatorsListViewController.swift */,
 				846FD4212310A4B10051D200 /* Space.swift */,
 				847FC3252313516E009171AF /* SpaceList.swift */,
@@ -184,6 +187,7 @@
 				845F65AE22FF2B1300D36473 /* ActuatorsListViewController.swift in Sources */,
 				847FC32823135B70009171AF /* AppExtensions.swift in Sources */,
 				840D47F823038965002A27B6 /* Actuator.swift in Sources */,
+				844C1D36232F05DA00AC9C8E /* DetailActuatorViewController.swift in Sources */,
 				840D47FC23038B3C002A27B6 /* ActuatorList.swift in Sources */,
 				159FE2642315BBC900D0841D /* SpaceCollectionViewCell.swift in Sources */,
 				84F7C6E0232BAE2900188CEE /* APIManager.swift in Sources */,
