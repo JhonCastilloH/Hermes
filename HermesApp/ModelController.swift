@@ -12,6 +12,27 @@ class ModelController {
     
     var spacesList = SpaceList.getSpaces()
     var actuatorList = ActuatorList.getActuators()
+    var currentUser: Contact?
+    private var token:String = ""
+    
+    
+    init(){
+       // currentUser = Contact(id: "123", name: "john", mode: "castillo", spaceID: "gmail")
+        
+    }
+    
+    func grantedAccess(code:String){
+        self.token = code
+    }
+    
+    func loginUpInBackground(_ user: [String:String], onComplete: @escaping (String) -> Void){
+        
+        APIManager.getContact(userEmail: user["mail"]!, userPass: user["pass"]!, onComplete: { json in
+            print("Usuario logueado")
+            onComplete(json)
+        }
+        )
+    }
     
     
     func update(_ space: Space) {
@@ -21,7 +42,7 @@ class ModelController {
                 break
             }
         }
-        APIManager.updateSpace(space: space, onSuccess: { json in
+        APIManager.updateSpace(space: space, code: self.token, onSuccess: { json in
             print("Espacio Actualizado")
         }, onFailure: { error in
             print(error)
@@ -50,7 +71,7 @@ class ModelController {
         let index = spacesList.spaces.firstIndex(where: { $0.id == actuator.spaceID})!
         if let index2 = spacesList.spaces[index].actuators.firstIndex(where: { $0["id"] == actuator.id}){
             spacesList.spaces[index].actuators[index2]["name"] = actuator.name
-            APIManager.updateSpace(space: spacesList.spaces[index], onSuccess: { json in
+            APIManager.updateSpace(space: spacesList.spaces[index], code: self.token, onSuccess: { json in
                 print("Espacio Actualizado")
             }, onFailure: { error in
                 print(error)
@@ -63,7 +84,7 @@ class ModelController {
                 break
             }
         }
-        APIManager.updateActuator(actuator: actuator, onSuccess: { json in
+        APIManager.updateActuator(actuator: actuator, code: self.token, onSuccess: { json in
             print("Dispositivo Actualizado")
         }, onFailure: { error in
             print(error)

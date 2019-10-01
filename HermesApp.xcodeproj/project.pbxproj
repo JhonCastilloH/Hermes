@@ -21,6 +21,8 @@
 		844C1D36232F05DA00AC9C8E /* DetailActuatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C1D35232F05DA00AC9C8E /* DetailActuatorViewController.swift */; };
 		845F65AC22FF2A9F00D36473 /* ActuatorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F65AB22FF2A9F00D36473 /* ActuatorCollectionViewCell.swift */; };
 		845F65AE22FF2B1300D36473 /* ActuatorsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F65AD22FF2B1300D36473 /* ActuatorsListViewController.swift */; };
+		8462DB652331DF9F002A8110 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8462DB642331DF9F002A8110 /* LoginViewController.swift */; };
+		8462DB672331E19A002A8110 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8462DB662331E19A002A8110 /* Contact.swift */; };
 		846FD4222310A4B10051D200 /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FD4212310A4B10051D200 /* Space.swift */; };
 		847FC3262313516E009171AF /* SpaceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847FC3252313516E009171AF /* SpaceList.swift */; };
 		847FC32823135B70009171AF /* AppExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847FC32723135B70009171AF /* AppExtensions.swift */; };
@@ -45,6 +47,8 @@
 		844C1D35232F05DA00AC9C8E /* DetailActuatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailActuatorViewController.swift; sourceTree = "<group>"; };
 		845F65AB22FF2A9F00D36473 /* ActuatorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActuatorCollectionViewCell.swift; sourceTree = "<group>"; };
 		845F65AD22FF2B1300D36473 /* ActuatorsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActuatorsListViewController.swift; sourceTree = "<group>"; };
+		8462DB642331DF9F002A8110 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8462DB662331E19A002A8110 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		846FD4212310A4B10051D200 /* Space.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
 		847FC3252313516E009171AF /* SpaceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceList.swift; sourceTree = "<group>"; };
 		847FC32723135B70009171AF /* AppExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppExtensions.swift; sourceTree = "<group>"; };
@@ -83,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				1583C06822FDB51C00EAE57F /* AppDelegate.swift */,
+				8462DB642331DF9F002A8110 /* LoginViewController.swift */,
 				1583C06A22FDB51C00EAE57F /* ViewController.swift */,
 				84F7C6DF232BAE2800188CEE /* APIManager.swift */,
 				841FB5A0232015C20066B016 /* ModelController.swift */,
@@ -99,6 +104,7 @@
 				846FD4212310A4B10051D200 /* Space.swift */,
 				847FC3252313516E009171AF /* SpaceList.swift */,
 				840D47F723038965002A27B6 /* Actuator.swift */,
+				8462DB662331E19A002A8110 /* Contact.swift */,
 				840D47FB23038B3B002A27B6 /* ActuatorList.swift */,
 				840D47F923038AFE002A27B6 /* Mocks.swift */,
 				847FC32723135B70009171AF /* AppExtensions.swift */,
@@ -177,6 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8462DB672331E19A002A8110 /* Contact.swift in Sources */,
 				845F65AC22FF2A9F00D36473 /* ActuatorCollectionViewCell.swift in Sources */,
 				1583C06B22FDB51C00EAE57F /* ViewController.swift in Sources */,
 				846FD4222310A4B10051D200 /* Space.swift in Sources */,
@@ -190,6 +197,7 @@
 				844C1D36232F05DA00AC9C8E /* DetailActuatorViewController.swift in Sources */,
 				840D47FC23038B3C002A27B6 /* ActuatorList.swift in Sources */,
 				159FE2642315BBC900D0841D /* SpaceCollectionViewCell.swift in Sources */,
+				8462DB652331DF9F002A8110 /* LoginViewController.swift in Sources */,
 				84F7C6E0232BAE2900188CEE /* APIManager.swift in Sources */,
 				840D47FA23038AFE002A27B6 /* Mocks.swift in Sources */,
 				847FC3262313516E009171AF /* SpaceList.swift in Sources */,

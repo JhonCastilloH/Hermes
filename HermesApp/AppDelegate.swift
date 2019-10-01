@@ -17,11 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
     if let navigationController = window?.rootViewController as? UINavigationController,
-        let actuatorsListViewController = navigationController.viewControllers.first as? ActuatorsListViewController {
+        let actuatorsListViewController = navigationController.viewControllers.first as? LoginViewController {//ActuatorsListViewController {
             actuatorsListViewController.modelController = ModelController()
-    }
-    
-    return true
+        }
+        return true
   }
 
   func applicationWillResignActive(_ application: UIApplication) {

@@ -42,7 +42,9 @@ class ActuatorViewController: UIViewController {
     self.image = UIImage(assetIdentifier: UIImage.AssetIdentifier(rawValue: actuator!.type)!)
     OnOff.setImage(image, for: .normal)
     noirImage = image?.noir
-    
+    if (actuator!.mode == "persuation"){
+        self.setPersuationMode(OnOff!)
+    }
     let modeList = ActuatorList.getModeTypes(by: actuator!.type)
     let buttonList = [ModeButton1, ModeButton2, ModeButton3, ModeButton4]
     for index in 0...3 {
@@ -78,18 +80,22 @@ class ActuatorViewController: UIViewController {
     }
     
   @IBAction func onOffSwitch(_ sender: Any) {
-    actuator!.mode = "onOff"
+    timer?.invalidate()
     if actuator!.switchBulb {
+        actuator!.mode = "on"
         OnOff.setImage(image, for: .normal)
     }else {
          // noirImage is an optional UIImage (UIImage?)
+        actuator!.mode = "off"
         OnOff.setImage(noirImage, for: .normal)
     }
     actuator!.switchBulb.toggle()
+    modelController.update(self.actuator!)
   }
   
   @IBAction func setTimer(_ sender: Any) {
-    actuator!.mode = "timer"
+    timer?.invalidate()
+    actuator!.mode = "on"
     alertWithTF()
     
     
@@ -98,23 +104,21 @@ class ActuatorViewController: UIViewController {
   
   @IBAction func setRomacticMode(_ sender: Any) {
     if actuator!.mode != "romantic" {
-        actuator!.mode = "romantic"
-        actuator!.timeLeft = 2
-      OnOff.setImage(image, for: .normal)
-        actuator!.level = -0.5
-      for _ in 1...1 {
-        self.timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(self.actuator!.timeLeft), repeats: false, block: { timer in
-          
-            self.OnOff.setImage(self.image?.decreaseBrightness(level: self.actuator!.level) , for: .normal)
-          self.actuator!.level += 0.1
-        })
-      }
+        timer?.invalidate()
+       actuator!.mode = "romantic"
+       actuator!.timeLeft = 2
+       OnOff.setImage(image, for: .normal)
+       actuator!.level = -0.6
+       self.OnOff.setImage(self.image?.decreaseBrightness(level: self.actuator!.level) , for: .normal)
+       modelController.update(self.actuator!)
+        
     }
   }
   
   @IBAction func setPersuationMode(_ sender: Any) {
     if actuator!.mode != "persuation" {
       actuator!.mode = "persuation"
+      modelController.update(self.actuator!)
       OnOff.setImage(image, for: .normal)
       actuator!.level = 1
       self.timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: { timer in
@@ -123,7 +127,6 @@ class ActuatorViewController: UIViewController {
             self.OnOff.setImage(self.image, for: .normal)
         }else{
             self.OnOff.setImage(self.noirImage, for: .normal)
-          self.actuator!.level -= 0.1
         }
         self.actuator!.switchBulb.toggle()
       })
@@ -146,6 +149,8 @@ class ActuatorViewController: UIViewController {
         //originalImage = selectedPictureImageView.image
         //sender.value = sliderValue
         print("Unpressed button slider value is \(sender.value)")
+        self.actuator?.level = round(slider.value)
+        self.modelController.update(self.actuator!)
     }
     
     func alertWithTF() {
@@ -155,9 +160,15 @@ class ActuatorViewController: UIViewController {
         let save = UIAlertAction(title: "ON", style: .default) { (alertAction) in
             let textField = alert.textFields![0] as UITextField
             self.actuator!.timeLeft = Int(textField.text!)!
+            self.actuator!.switchBulb = true
             self.OnOff.setImage(self.image, for: .normal)
+            self.modelController.update(self.actuator!)
+            self.actuator!.mode = "on"
             self.timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(self.actuator!.timeLeft), repeats: false, block: { timer in
                 self.OnOff.setImage(self.noirImage, for: .normal)
+                self.actuator!.switchBulb = false
+                self.actuator!.mode = "off"
+                self.modelController.update(self.actuator!)
             })
         }
         //Step : 3
@@ -185,6 +196,8 @@ class ActuatorViewController: UIViewController {
         }
         sliderValue.text =     "\(round(slider.value))"
     }
+    
+    
     
     // Mark : Navigation
     @IBAction func showDetailsView(_ sender: Any) {

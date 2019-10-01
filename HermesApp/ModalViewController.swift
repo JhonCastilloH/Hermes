@@ -39,6 +39,12 @@ class ModalViewController: UIViewController {
             view.backgroundColor = .black
         }
         
+        if (isTypeSpace!) {
+            titleLabel.text = "Nuevo Espacio"
+        }else{
+            titleLabel.text  = "Nuevo Dispositivo"
+        }
+        
     }
     
 
